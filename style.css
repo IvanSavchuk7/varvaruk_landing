@@ -41,8 +41,11 @@ section.hero {
 }
 section.hero .wordmark {
     height: 1.25rem;
-    width: fit-content;
+    width: auto;
     margin-bottom: 4rem;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
 }
 section.hero .title {
     font-size: 4rem;
@@ -255,10 +258,12 @@ section.for .content .item .description {
     font-family: 'Inter', sans-serif;
 }
 section.for .content .item img {
-    height: 3rem;
-    min-height: 3rem;
-    width: auto;
     margin-bottom: .5rem;
+    height: 3rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
 }
 section.for .offer {
     padding: 2.5rem;
@@ -800,6 +805,10 @@ section.pink .support > div:last-child {
     flex-direction: column;
     justify-content: center;
 }
+
+section.hero .title .abs br.mobile {
+    display: none;
+}
 section.pink .support > div:last-child p {
     font-family: 'Inter', sans-serif;
     font-size: .9rem;
@@ -1303,6 +1312,26 @@ section.pink .support .support-link {
     section.stats .content .inner .stats-container > div {
         padding: 2rem 1rem;
     }
+    section.hero .title .abs br:not(.mobile) {
+        display: none;
+    }
+    section.hero .title .abs br.mobile {
+        display: block;
+    }
+    section.hero .title .abs {
+        font-size: 1.1rem;
+        bottom: -4.5rem;
+    }
+    section.hero .title .abs img {
+        height: 3.6rem;
+        min-height: 3.6rem;
+    }
+    .inline-form button {
+        font-size: 1.25rem;
+    }
+    section.hero .title > div img {
+        display: none;
+    }
 }
 @media only screen and (max-width: 420px) {
     section.stats .stats-container .text p:first-child {
@@ -1314,6 +1343,21 @@ section.pink .support .support-link {
     section.stats .content .offer-text br {
         display: none;
     }
+    section.after .title .abs {
+        height: 4rem;
+        top: 8rem;
+    }
+    section.hero .title {
+        font-size: 1.5rem;
+    }
+    section.hero .form-wrapper .tooltip > span,
+    .form-note {
+        font-size: 1.1rem;
+    }
+    .inline-form button {
+        font-size: 1.25rem;
+    }
+
 }
 @media only screen and (max-width: 375px) {
 }
