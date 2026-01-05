@@ -530,12 +530,16 @@ section.bonus .content {
     max-width: 1400px;
     margin: auto;
 }
-section.bonus .title > div {
+section.bonus .title > div,
+section.bonus .title.mobile {
     font-size: 2rem;
     line-height: 120%;
     text-transform: uppercase;
     transform: skewY(2deg);
     width: fit-content;
+}
+section.bonus .title.mobile {
+    display: none;
 }
 section.bonus .title > div:last-of-type {
     position: relative;
@@ -545,7 +549,9 @@ section.bonus .title > div:last-of-type .abs {
     right: -5rem;
     height: 3.5rem;
     top: -1rem;
-    width: fit-content;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
 }
 section.bonus .title > div span {
     background: #FFFFFF;
@@ -1279,6 +1285,12 @@ section.pink .support .support-link {
     section.hero .title > div img[src="assets/images/icon-1.png"] {
         height: 2rem;
     }
+    section.bonus .title.mobile {
+        display: block;
+    }
+    section.bonus .title:not(.mobile) {
+        display: none;
+    }
     section.hero .form-wrapper .tooltip br {
         display: none;
     }
@@ -1287,10 +1299,11 @@ section.pink .support .support-link {
     section.hero img.author-image {
         width: 85%;
     }
+    section.bonus .title.mobile {
+        font-size: 1.75rem;
+    }
     section.bonus .title > div {
-        font-size: 1.5rem;
-        display: inline;
-        transform: skewY(2deg);
+        font-size: 1.15rem;
     }
     section.youtube-stats .inner .tooltip .left {
         font-size: 1.2rem;
@@ -1305,6 +1318,16 @@ section.pink .support .support-link {
 @media only screen and (max-width: 480px) {
     .inline-form, section.hero .form-wrapper .tooltip,section.hero img.author-image {
         width: 100%;
+    }
+    section.hero img.author-image {
+        width: 90%;
+        margin: 0;
+    }
+    section.bonus .title.mobile {
+        font-size: 1.5rem;
+    }
+    .inline-form {
+        padding: 1rem 1.25rem 3rem 1.25rem;
     }
     html {
         font-size: 13px;
@@ -1329,8 +1352,41 @@ section.pink .support .support-link {
     .inline-form button {
         font-size: 1.25rem;
     }
-    section.hero .title > div img {
+    section.hero .title > div:not(.abs) img {
         display: none;
+    }
+    section.hero .form-wrapper form .abs p {
+        font-size: .85rem;
+    }
+    section.hero .form-wrapper form .abs img {
+        height: 1.75rem;
+    }
+    section.bonus .title > div {
+        font-size: 1.1rem;
+    }
+    main.main > section.bonus {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    section.youtube-stats .bottom .left {
+        padding: 1rem 1.5rem 1rem .9rem;
+        background-size: auto 3rem;
+    }
+    section.youtube-stats .bottom .left .description br {
+        display: none;
+    }
+    section.youtube-stats .bottom .left .description {
+        padding-left: 2.5rem;
+    }
+    section.youtube-stats .bottom .right p {
+        text-align: center;
+        font-size: 1.2rem;
+    }
+    section.youtube-stats .bottom .right p:last-child {
+        font-size: 1.1rem;
+    }
+    section.youtube-stats .inner .tooltip .left, section.youtube-stats a, section.pink a:not(.support-link) {
+        font-size: 1.5rem;
     }
 }
 @media only screen and (max-width: 420px) {
@@ -1348,7 +1404,11 @@ section.pink .support .support-link {
         top: 8rem;
     }
     section.hero .title {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
+        gap: .5rem;
+    }
+    section.pink .title > div {
+        font-size: 1.75rem;
     }
     section.hero .form-wrapper .tooltip > span,
     .form-note {
@@ -1357,7 +1417,32 @@ section.pink .support .support-link {
     .inline-form button {
         font-size: 1.25rem;
     }
+    section.hero .title .abs {
+        font-size: .9rem;
+    }
+    section.hero .title .abs img {
+        height: 3.2rem;
+        min-height: 3.2rem;
+    }
+    section.for .title {
+        font-size: 2.25rem;
+    }
+    section.for .offer p {
+        font-size: 1.25rem;
+    }
+    section.stats .content {
+        padding: 1.5rem 1rem;
+    }
+    section.pink .content .grid > .item {
+        padding: 2rem 3rem;
+    }
+    section.pink .content .bottom .right {
+        font-size: 1.25rem;
+    }
 
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 380px) {
+    html {
+        font-size: 12px;
+    }
 }
