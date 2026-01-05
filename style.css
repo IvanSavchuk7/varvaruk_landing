@@ -62,7 +62,7 @@ section.hero .title > div {
 }
 section.hero .title > div img[src="assets/images/icon-1.png"] {
     height: 4rem;
-    width: fit-content;
+    width: auto;
 }
 section.hero .title > div img[src="assets/images/icon-2.png"] {
     height: 3.5rem;
@@ -257,7 +257,7 @@ section.for .content .item .description {
 section.for .content .item img {
     height: 3rem;
     min-height: 3rem;
-    width: fit-content;
+    width: auto;
     margin-bottom: .5rem;
 }
 section.for .offer {
@@ -327,7 +327,7 @@ section.after .title .abs {
     right: 5%;
     top: -1rem;
     height: 8rem;
-    width: fit-content;
+    width: auto;
 }
 section.after .title > div {
     font-size: 3rem;
@@ -434,7 +434,7 @@ section.stats .content .title > div:last-of-type .abs {
     right: -3rem;
     bottom: .5rem;
     height: 2.5rem;
-    width: fit-content;
+    width: auto;
     min-height: 2.5rem;
     transform: rotate(-8.5deg);
 }
@@ -1279,7 +1279,9 @@ section.pink .support .support-link {
         width: 85%;
     }
     section.bonus .title > div {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
+        display: inline;
+        transform: skewY(2deg);
     }
     section.youtube-stats .inner .tooltip .left {
         font-size: 1.2rem;
@@ -1287,22 +1289,31 @@ section.pink .support .support-link {
     section.pink .content .bottom {
         margin: 0;
     }
+    section.stats .content .title > div {
+        display: inline;
+    }
 }
 @media only screen and (max-width: 480px) {
-    html {
-        font-size: 12px;
-    }
     .inline-form, section.hero .form-wrapper .tooltip,section.hero img.author-image {
         width: 100%;
     }
+    html {
+        font-size: 13px;
+    }
+    section.stats .content .inner .stats-container > div {
+        padding: 2rem 1rem;
+    }
 }
 @media only screen and (max-width: 420px) {
-    html {
-        font-size: 11px;
+    section.stats .stats-container .text p:first-child {
+        font-size: 1.25rem;
+    }
+    section.stats .content .inner .stats-container {
+        gap: .5rem;
+    }
+    section.stats .content .offer-text br {
+        display: none;
     }
 }
 @media only screen and (max-width: 375px) {
-    html {
-        font-size: 10px;
-    }
 }
