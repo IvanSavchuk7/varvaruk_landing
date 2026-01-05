@@ -196,6 +196,9 @@ section.hero .form-wrapper form .abs img {
     height: 2.5rem;
     width: fit-content;
     min-height: 2rem;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
 }
 section.hero .form-wrapper form .abs p {
     line-height: 125%;
@@ -822,6 +825,9 @@ section.pink .support > div:last-child p {
 section.pink .support > div:last-child img {
     height: 2rem;
     width: fit-content;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
 }
 section.pink .support .support-link {
     background: #FFFFFF;
@@ -1166,8 +1172,11 @@ section.pink .support .support-link {
         width: 75%;
         margin: auto;
     }
-    section.youtube-stats .inner .tooltip .left, section.youtube-stats a, section.pink a:not(.support-link) {
+    section.youtube-stats .inner .tooltip .left {
         font-size: 1.5rem;
+    }
+    section.youtube-stats a, section.pink a:not(.support-link) {
+        font-size: 2rem;
     }
     main.main > section.pink {
         padding-top: 5rem;
@@ -1314,6 +1323,16 @@ section.pink .support .support-link {
     section.stats .content .title > div {
         display: inline;
     }
+    section.youtube-stats a {
+        width: 100%;
+    }
+    section.youtube-stats a, section.pink a:not(.support-link),
+    section.for .offer a {
+        padding: 2rem 3rem;
+    }
+    .inline-form button {
+        font-size: 1.5rem;
+    }
 }
 @media only screen and (max-width: 480px) {
     .inline-form, section.hero .form-wrapper .tooltip,section.hero img.author-image {
@@ -1369,14 +1388,14 @@ section.pink .support .support-link {
         padding-right: 5px;
     }
     section.youtube-stats .bottom .left {
-        padding: 1rem 1.5rem 1rem .9rem;
-        background-size: auto 3rem;
+        padding: 1rem;
+        background-size: auto 2.5rem;
     }
     section.youtube-stats .bottom .left .description br {
         display: none;
     }
     section.youtube-stats .bottom .left .description {
-        padding-left: 2.5rem;
+        padding-left: 2rem;
     }
     section.youtube-stats .bottom .right p {
         text-align: center;
@@ -1385,8 +1404,11 @@ section.pink .support .support-link {
     section.youtube-stats .bottom .right p:last-child {
         font-size: 1.1rem;
     }
-    section.youtube-stats .inner .tooltip .left, section.youtube-stats a, section.pink a:not(.support-link) {
+    section.youtube-stats a, section.pink a:not(.support-link) {
         font-size: 1.5rem;
+    }
+    section.pink .content .grid > .item .text {
+        font-size: 1.2rem;
     }
 }
 @media only screen and (max-width: 420px) {
@@ -1410,6 +1432,7 @@ section.pink .support .support-link {
     section.pink .title > div {
         font-size: 1.75rem;
     }
+
     section.hero .form-wrapper .tooltip > span,
     .form-note {
         font-size: 1.1rem;
@@ -1439,7 +1462,29 @@ section.pink .support .support-link {
     section.pink .content .bottom .right {
         font-size: 1.25rem;
     }
-
+    main.main > section.youtube-stats {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    main.main > section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    section.youtube-stats .bottom .left .title {
+        font-size: 1.25rem;
+    }
+    section.pink .content .bottom .left > div:first-child {
+        gap: .5rem;
+    }
+    section.pink .content .bottom .left > div:last-child br {
+        display: none;
+    }
+    section.pink .content .bottom .left > div:first-child p {
+        font-size: 1.5rem;
+    }
+    section.pink .content .bottom .left > div:last-child {
+        font-size: 1rem;
+    }
 }
 @media only screen and (max-width: 380px) {
     html {
