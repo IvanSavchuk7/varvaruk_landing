@@ -282,7 +282,7 @@ section.for .offer .abs {
     position: absolute;
     right: -3rem;
     top: 0;
-    height: fit-content;
+    height: auto;
     transform: rotate(10deg);
     width: 3rem;
 }
@@ -1050,7 +1050,7 @@ section.pink .support .support-link {
         position: absolute;
         right: 0;
         top: 50%;
-        height: fit-content;
+        height: auto;
         transform: translate(-50%, -50%) rotate(10deg);
         width: 3rem;
     }
