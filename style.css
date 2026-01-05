@@ -1274,7 +1274,8 @@ section.pink .support .support-link {
         display: none;
     }
     .inline-form,
-    section.hero .form-wrapper .tooltip {
+    section.hero .form-wrapper .tooltip,
+    section.hero img.author-image {
         width: 85%;
     }
     section.bonus .title > div {
@@ -1290,6 +1291,9 @@ section.pink .support .support-link {
 @media only screen and (max-width: 480px) {
     html {
         font-size: 12px;
+    }
+    .inline-form, section.hero .form-wrapper .tooltip,section.hero img.author-image {
+        width: 100%;
     }
 }
 @media only screen and (max-width: 420px) {
