@@ -1457,7 +1457,7 @@ section.hero .form-wrapper img.mobile {
         margin: auto;
     }
     section.hero .form-wrapper form .abs {
-        top: -90%;
+        top: -80%;
         right: 2rem;
         font-size: 1.2rem;
     }
@@ -1688,17 +1688,11 @@ section.hero .form-wrapper img.mobile {
         top: 8rem;
     }
     section.hero .title {
-        font-size: 1.75rem;
+        font-size: 3rem;
         gap: .5rem;
-    }
-    section.pink .title > div {
-        font-size: 1.75rem;
     }
     section.hero .form-wrapper .tooltip {
         padding-right: 2rem;
-    }
-    .inline-form button {
-        font-size: 1.25rem;
     }
     section.hero .title .abs {
         font-size: .9rem;
@@ -1737,6 +1731,12 @@ section.hero .form-wrapper img.mobile {
     section.stats .content .title {
         font-size: 2rem;
     }
+    section.youtube-stats .inner .tooltip .left {
+        font-size: 1.25rem;
+    }
+    section.after .content > .item p, section.for .offer p {
+        font-size: 1.3rem;
+    }
 }
 @media only screen and (max-width: 380px) {
     html {
@@ -1744,5 +1744,11 @@ section.hero .form-wrapper img.mobile {
     }
     section.pink .content .bottom .left > div:first-child p {
         font-size: 1.65rem;
+    }
+    section.hero .title {
+        font-size: 2.75rem;
+    }
+    section.youtube-stats .inner .tooltip .left {
+        font-size: 1.2rem;
     }
 }
