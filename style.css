@@ -287,22 +287,40 @@ section.for .content .item img {
     text-align: center;
 }
 section.for .offer {
-    padding: 2.5rem;
+    padding: 1.5rem 2rem;
     width: 100%;
     max-width: 1400px;
     margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-image: url("assets/images/offer-bg.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 75% 50%;
 }
 section.for .offer p {
     text-transform: uppercase;
-    font-size: 1.6rem;
+    font-size: 1.25rem;
     line-height: 110%;
     width: fit-content;
 }
+section.for .offer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
 section.for .offer p:first-of-type {
-    position: relative;
+    padding: 1rem;
+    background: #FFFFFF;
+}
+section.for .offer img.mobile {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+section.for .offer p:last-child {
+    font-size: 2rem;
 }
 section.for .offer .abs {
     position: absolute;
@@ -316,8 +334,7 @@ section.for .offer a,
 section.bonus a,
 section.youtube-stats a,
 section.pink a:not(.support-link) {
-    height: 3rem;
-    padding: 0 2rem;
+    padding: 1rem 2rem;
     display: flex;
     width: fit-content;
     justify-content: center;
@@ -330,6 +347,10 @@ section.pink a:not(.support-link) {
     cursor: pointer;
     white-space: nowrap;
     transition: background 0.2s ease;
+}
+section.for .offer a {
+    padding: 1rem 2rem;
+    font-size: 1.75rem;
 }
 section.after {
     padding: 2rem 4rem 4rem 4rem;
@@ -540,10 +561,10 @@ section.stats .content .offer-text span {
 section.bonus {
     transform: skewY(-2deg);
     background-color: #6C53E7;
-    background-image: url("assets/images/bonus-bg.png");
+    background-image: url("assets/images/bonus-bg.png"), url("assets/images/bonus-bg-2.png");
     background-repeat: no-repeat;
-    background-size: auto 75%;
-    background-position: 100% 100%;
+    background-size: auto 50%, 20% auto;
+    background-position: 100% 100%, 95% 0;
     padding: 6rem 4rem 8rem 4rem;
 }
 section.bonus .content {
@@ -551,16 +572,12 @@ section.bonus .content {
     max-width: 1400px;
     margin: auto;
 }
-section.bonus .title > div,
-section.bonus .title.mobile {
+section.bonus .title > div {
     font-size: 2rem;
     line-height: 120%;
     text-transform: uppercase;
     transform: skewY(2deg);
     width: fit-content;
-}
-section.bonus .title.mobile {
-    display: none;
 }
 section.bonus .title > div:last-of-type {
     position: relative;
@@ -770,6 +787,12 @@ section.pink .content .bottom .left > div:first-child {
     display: flex;
     gap: 1rem;
 }
+section.bonus .text {
+    font-size: 1.3rem;
+    transform: skewY(2deg);
+    margin: 1.5rem 0;
+    font-family: 'Inter', sans-serif;
+}
 section.pink .content .bottom .left > div:first-child p {
     font-size: 2rem;
     text-transform: uppercase;
@@ -833,7 +856,7 @@ section.pink .support > div:last-child {
     justify-content: center;
 }
 
-section.hero .title .abs br.mobile {
+br.mobile {
     display: none;
 }
 section.pink .support > div:last-child p {
@@ -855,6 +878,10 @@ section.pink .support .support-link {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     margin: .5rem 0 1rem 0;
+}
+section.hero .title.mobile,
+section.hero .form-wrapper img.mobile {
+    display: none;
 }
 
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
@@ -1089,10 +1116,6 @@ section.pink .support .support-link {
         padding: 1rem;
         position: relative;
     }
-    section.for .offer p {
-        font-size: 1.1rem;
-        display: inline;
-    }
     section.for .offer p:first-of-type {
         position: initial;
     }
@@ -1106,6 +1129,9 @@ section.pink .support .support-link {
         height: auto;
         transform: translate(-50%, -50%) rotate(10deg);
         width: 3rem;
+    }
+    section.for .offer p {
+        font-size: 1.35rem;
     }
     section.for .offer a {
         margin-top: 1rem;
@@ -1242,6 +1268,8 @@ section.pink .support .support-link {
     section.pink .content .bottom .right {
         width: fit-content;
         margin: auto;
+        font-size: 1.25rem;
+        padding: 2rem 3rem;
     }
     section.pink .support {
         flex-direction: column;
@@ -1268,6 +1296,17 @@ section.pink .support .support-link {
         padding-left: 0;
         padding-right: 0;
     }
+    section.for .offer {
+        background-image: none;
+        padding: 1.5rem;
+    }
+    section.for .offer img.mobile {
+        display: block;
+    }
+    section.for .offer p {
+        text-align: center;
+        margin: auto;
+    }
 }
 @media only screen and (max-width: 700px) {
     section.for {
@@ -1292,11 +1331,14 @@ section.pink .support .support-link {
         "c"
         "d";
     }
+    section.for .offer img.mobile {
+        margin: -1rem auto;
+    }
     section.pink .content .grid > .item {
-        padding: 2rem 4rem;
+        padding: 2rem;
     }
     section.pink .content .grid > .item .text {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     section.pink .content .grid > .item .num {
         font-size: 3rem;
@@ -1322,25 +1364,20 @@ section.pink .support .support-link {
     section.for .offer a {
         font-size: 1.5rem;
     }
-    section.for .content .item .description {
-        font-size: 1.3rem;
-    }
-    section.hero .title {
-        font-size: 2rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-5.png"] {
-        height: 2rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-1.png"] {
-        height: 2rem;
-    }
-    section.bonus .title.mobile {
-        display: block;
-    }
-    section.bonus .title:not(.mobile) {
+    section.for .title br:not(.mobile) {
         display: none;
     }
-    section.hero .form-wrapper .tooltip br {
+    section.for .content .item .description {
+        font-size: 1.35rem;
+    }
+    section.hero .title {
+        font-size: 4rem;
+    }
+    section.hero .title > div img {
+        height: 4rem;
+    }
+    section.hero .form-wrapper > img:not(.mobile),
+    section.hero .title:not(.mobile) {
         display: none;
     }
     .inline-form,
@@ -1348,14 +1385,15 @@ section.pink .support .support-link {
     section.hero img.author-image {
         width: 85%;
     }
-    section.bonus .title.mobile {
-        font-size: 1.75rem;
-    }
     section.bonus .title > div {
         font-size: 1.15rem;
     }
     section.youtube-stats .inner .tooltip .left {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+    }
+    section.youtube-stats .inner .tooltip .right {
+        font-size: 1.15rem;
+        text-align: left;
     }
     section.pink .content .bottom {
         margin: 0;
@@ -1368,19 +1406,182 @@ section.pink .support .support-link {
     }
     section.youtube-stats a, section.pink a:not(.support-link),
     section.for .offer a {
-        padding: 2rem 3rem;
+        padding: 1.25rem 2rem;
+    }
+    section.for .offer a {
+        width: 100%;
     }
     .inline-form button {
         font-size: 1.5rem;
+        padding: 1.25rem 1rem;
+        height: auto;
+    }
+    .form-note {
+        margin-top: 2rem;
+        font-size: 1.1rem;
+    }
+    section.hero .form-wrapper .tooltip {
+        text-align: left;
+    }
+    section.hero .form-wrapper .tooltip > span {
+        font-size: 1.25rem;
+    }
+    section.youtube-stats .bottom .left .title {
+        font-size: 1.75rem;
+    }
+    section.youtube-stats .bottom .left .title br {
+        display: none;
+    }
+    section.hero .form-wrapper .tooltip > span:first-child {
+        padding-bottom: 10px;
     }
     section.bonus {
         transform: skewY(-2deg);
         background-color: #6C53E7;
-        background-image: url(assets/images/bonus-bg.png);
+        background-image: url("assets/images/bonus-bg-mobile.png"), url("assets/images/bonus-bg-2.png");
         background-repeat: no-repeat;
-        background-size: auto 50%;
-        background-position: 100% 100%;
+        background-size: auto 50%, 25% auto;
+        background-position: 100% 0, 75% 0;
         padding: 6rem 4rem 8rem 4rem;
+    }
+    section.bonus .title > div {
+        display: inline-block;
+        font-size: 2.75rem;
+    }
+    section.hero .title.mobile,
+    section.hero .form-wrapper img.mobile {
+        display: block;
+    }
+    section.hero .form-wrapper img.mobile {
+        width: 90%;
+        margin: auto;
+    }
+    section.hero .form-wrapper form .abs {
+        top: -90%;
+        right: 2rem;
+        font-size: 1.2rem;
+    }
+    section.hero .form-wrapper form .abs p {
+        font-size: 1rem;
+    }
+    .inline-form input {
+        font-size: 1.2rem;
+        padding: 1.25rem 1rem;
+    }
+    section.for .title {
+        font-size: 3rem;
+    }
+    section.for .content .item .item-title {
+        font-size: 1.5rem;
+    }
+    main.main > section.for {
+        background-size: 300% auto;
+        background-position: 0 115%, 100% 0;
+        padding-bottom: 12rem;
+    }
+    section.youtube-stats .inner .tooltip {
+        align-items: flex-start;
+    }
+    section.youtube-stats .inner .title {
+        font-size: 2.25rem;
+        text-align: left;
+    }
+    br.mobile {
+        display: block;
+    }
+    section.after .title > div {
+        font-size: 2.5rem;
+        display: inline;
+    }
+    section.after .content > .item {
+        padding: 12rem 2rem 2rem 2rem;
+    }
+    section.stats .content .title {
+        font-size: 2.25rem;
+        padding-right: 2.5rem;
+        position: relative;
+    }
+    section.stats .content .title > div:last-of-type .abs {
+        height: 3.5rem;
+        min-height: 3.5rem;
+        right: 0;
+        top: 50%;
+    }
+    section.stats .content .title > div:last-of-type {
+        position: initial;
+    }
+    section.stats .content .offer-text {
+        font-size: 1.25rem;
+    }
+    section.stats .content .offer-text br:not(.mobile) {
+        display: none;
+    }
+    main.main > section.stats {
+        padding-bottom: 5rem;
+    }
+    main.main > section.bonus {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+    section.bonus a {
+        font-size: 2rem;
+    }
+    section.youtube-stats .bottom .left {
+        background-position: 95% 100%;
+    }
+    section.youtube-stats .bottom .left .description {
+        font-family: 'Inter', sans-serif;
+        padding-left: 0;
+        padding-right: 2rem;
+        font-size: 1.1rem;
+        text-transform: initial;
+        font-weight: 500;
+        background-size: auto 3.5rem;
+    }
+    main.main > section.pink {
+        padding-top: 11rem;
+        background-size: 300% auto;
+    }
+    section.pink .title > div {
+        font-size: 3rem;
+        display: inline;
+    }
+    section.pink .content .bottom .left > div:first-child img {
+        width: 2.5rem;
+        min-width: 2.5rem;
+        height: 2.5rem;
+    }
+    section.pink .content .bottom .left > div:last-child {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.15rem;
+        padding-left: 2.5rem;
+    }
+    main.main > section.pink {
+        padding-left: 0;
+        padding-right: 0;
+        overflow: hidden;
+    }
+    section.pink .content .bottom .left,
+    section.pink a:not(.support-link) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    section.pink .content .bottom .right {
+        width: 120%;
+        margin: 0 -10%;
+        padding: 2.5rem 1.5rem;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    section.pink .content > .tooltip,
+    section.pink .support > div:last-child p {
+        font-size: 1.25rem;
+    }
+    section.pink .support {
+        align-items: flex-start;
+    }
+    section.pink .support .mobile {
+        margin: 0;
     }
 }
 @media only screen and (max-width: 480px) {
@@ -1391,8 +1592,14 @@ section.pink .support .support-link {
         width: 90%;
         margin: 0;
     }
-    section.bonus .title.mobile {
-        font-size: 1.5rem;
+    section.stats .content .inner .stats-container > div:first-child {
+        height: 7.5rem;
+    }
+    section.stats .content .inner .stats-container > div:nth-child(2) {
+        height: 15rem;
+    }
+    section.stats .content .inner .stats-container > div:last-child {
+        height: 20rem;
     }
     .inline-form {
         padding: 1rem 1.25rem 3.5rem 1.25rem;
@@ -1403,6 +1610,11 @@ section.pink .support .support-link {
     section.stats .content .inner .stats-container > div {
         padding: 2rem 1rem;
     }
+    section.pink .content .bottom .left,
+    section.pink a:not(.support-link) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     section.hero .title .abs br:not(.mobile) {
         display: none;
     }
@@ -1412,52 +1624,47 @@ section.pink .support .support-link {
     section.hero .title .abs {
         font-size: 1.1rem;
         bottom: -4.5rem;
+        line-height: 130%;
     }
     section.hero .title .abs img {
-        height: 3.6rem;
-        min-height: 3.6rem;
+        height: 2.6rem;
+        min-height: 2.6rem;
     }
     .inline-form button {
         font-size: 1.25rem;
     }
-    section.hero .title > div:not(.abs) img {
-        display: none;
+    section.hero .title {
+        font-size: 3.25rem;
     }
-    section.hero .form-wrapper form .abs p {
-        font-size: .85rem;
+    section.hero .title > div img {
+        height: 3.25rem;
+    }
+    section.hero .title > div img[src*='icon-1.png'] {
+        height: 3.5rem;
+    }
+    section.hero .title > div img[src="assets/images/icon-2.png"] {
+        height: 4rem;
     }
     section.hero .form-wrapper form .abs img {
         height: 1.75rem;
     }
-    section.bonus .title > div {
-        font-size: 1.1rem;
-    }
+
     main.main > section.bonus {
         padding-left: 5px;
         padding-right: 5px;
     }
-    section.youtube-stats .bottom .left {
-        padding: 1rem;
-        background-size: auto 2.5rem;
-    }
     section.youtube-stats .bottom .left .description br {
         display: none;
     }
-    section.youtube-stats .bottom .left .description {
-        padding-left: 2rem;
-    }
     section.youtube-stats .bottom .right p {
-        text-align: center;
-        font-size: 1.2rem;
+        padding-right: 3rem;
+        font-size: 1.3rem;
     }
     section.youtube-stats .bottom .right p:last-child {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
     }
     section.youtube-stats a, section.pink a:not(.support-link) {
-        font-size: 1.5rem;
-    }
-    section.pink .content .grid > .item .text {
-        font-size: 1.2rem;
+        font-size: 2rem;
     }
     section.for {
         background-position: 0 105%, 100% 0;
@@ -1473,6 +1680,9 @@ section.pink .support .support-link {
     section.stats .content .offer-text br {
         display: none;
     }
+    section.bonus .title > div {
+        font-size: 2.5rem;
+    }
     section.after .title .abs {
         height: 4rem;
         top: 8rem;
@@ -1484,10 +1694,8 @@ section.pink .support .support-link {
     section.pink .title > div {
         font-size: 1.75rem;
     }
-
-    section.hero .form-wrapper .tooltip > span,
-    .form-note {
-        font-size: 1.1rem;
+    section.hero .form-wrapper .tooltip {
+        padding-right: 2rem;
     }
     .inline-form button {
         font-size: 1.25rem;
@@ -1499,20 +1707,11 @@ section.pink .support .support-link {
         height: 3.2rem;
         min-height: 3.2rem;
     }
-    section.for .title {
-        font-size: 2.25rem;
-    }
     section.for .offer p {
         font-size: 1.25rem;
     }
     section.stats .content {
         padding: 1.5rem 1rem;
-    }
-    section.pink .content .grid > .item {
-        padding: 2rem 3rem;
-    }
-    section.pink .content .bottom .right {
-        font-size: 1.25rem;
     }
     main.main > section.youtube-stats {
         padding-left: 10px;
@@ -1522,8 +1721,9 @@ section.pink .support .support-link {
         padding-left: 10px;
         padding-right: 10px;
     }
-    section.youtube-stats .bottom .left .title {
-        font-size: 1.25rem;
+    main.main > section.bonus {
+        padding-top: 9rem;
+        padding-bottom: 9rem;
     }
     section.pink .content .bottom .left > div:first-child {
         gap: .5rem;
@@ -1531,15 +1731,18 @@ section.pink .support .support-link {
     section.pink .content .bottom .left > div:last-child br {
         display: none;
     }
-    section.pink .content .bottom .left > div:first-child p {
-        font-size: 1.5rem;
-    }
     section.pink .content .bottom .left > div:last-child {
         font-size: 1rem;
+    }
+    section.stats .content .title {
+        font-size: 2rem;
     }
 }
 @media only screen and (max-width: 380px) {
     html {
         font-size: 12px;
+    }
+    section.pink .content .bottom .left > div:first-child p {
+        font-size: 1.65rem;
     }
 }
