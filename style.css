@@ -1457,7 +1457,7 @@ section.hero .form-wrapper img.mobile {
         margin: auto;
     }
     section.hero .form-wrapper form .abs {
-        top: -80%;
+        top: -75%;
         right: 2rem;
         font-size: 1.2rem;
     }
@@ -1647,11 +1647,6 @@ section.hero .form-wrapper img.mobile {
     section.hero .title > div img[src="assets/images/icon-2.png"] {
         height: 4rem;
     }
-    section.hero .form-wrapper form .abs img {
-        height: 1.75rem;
-        min-height: 1.75rem;
-    }
-
     main.main > section.bonus {
         padding-left: 5px;
         padding-right: 5px;
