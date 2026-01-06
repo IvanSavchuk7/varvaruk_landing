@@ -1562,7 +1562,8 @@ section.hero .form-wrapper img.mobile {
         overflow: hidden;
     }
     section.pink .content .bottom .left,
-    section.pink a:not(.support-link) {
+    section.pink a:not(.support-link),
+    section.pink .support {
         padding-left: 1rem;
         padding-right: 1rem;
     }
@@ -1611,7 +1612,8 @@ section.hero .form-wrapper img.mobile {
         padding: 2rem 1rem;
     }
     section.pink .content .bottom .left,
-    section.pink a:not(.support-link) {
+    section.pink a:not(.support-link),
+    section.pink .support {
         padding-left: 10px;
         padding-right: 10px;
     }
