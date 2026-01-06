@@ -195,7 +195,7 @@ section.hero .form-wrapper form .abs {
 section.hero .form-wrapper form .abs img {
     height: 2.5rem;
     width: fit-content;
-    min-height: 2rem;
+    min-height: 2.5rem;
     max-width: 100%;
     object-fit: contain;
     align-self: flex-start;
@@ -1649,6 +1649,7 @@ section.hero .form-wrapper img.mobile {
     }
     section.hero .form-wrapper form .abs img {
         height: 1.75rem;
+        min-height: 1.75rem;
     }
 
     main.main > section.bonus {
@@ -1688,6 +1689,9 @@ section.hero .form-wrapper img.mobile {
     section.after .title .abs {
         height: 4rem;
         top: 8rem;
+    }
+    section.hero .form-wrapper form .abs {
+        gap: 0;
     }
     section.hero .title {
         font-size: 3rem;
