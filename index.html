@@ -5,8 +5,41 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta content="За 80 днів ви з 0 навчитесь створювати контент через ШІ та вийдете на стабільний дохід" name="description">
+    <meta content="Почніть заробляти на ШІ від $2 000" property="og:title">
+    <meta content="За 80 днів ви з 0 навчитесь створювати контент через ШІ та вийдете на стабільний дохід" property="og:description">
+    <meta content="" property="og:image">
+    <meta content="Почніть заробляти на ШІ від $2 000" property="twitter:title">
+    <meta content="За 80 днів ви з 0 навчитесь створювати контент через ШІ та вийдете на стабільний дохід" property="twitter:description">
+    <meta content="" property="twitter:image">
+    <meta property="og:type" content="website">
+    <meta content="summary_large_image" name="twitter:card">
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="assets/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="assets/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="assets/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="assets/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="assets/favicon-128x128.png" sizes="128x128" />
+    <meta name="application-name" content="&nbsp;"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="assets/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="assets/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="assets/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="assets/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="assets/mstile-310x310.png" />
+    <script src="https://cdn.jsdelivr.net/npm/libphonenumber-js@1.10.14/bundle/libphonenumber-js.min.js" defer></script>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <script src="index.js" defer></script>
+    <title>Почніть заробляти на ШІ від $2 000</title>
 </head>
 <body>
     <main class="main">
@@ -24,21 +57,28 @@
 
             <div class="form-wrapper">
                 <img src="assets/images/author.png" alt="" class="author-image">
-                <form class="inline-form">
+                <form class="inline-form" id="form">
                     <div class="abs">
                         <img src="assets/images/icon-3.png" alt="">
                         <p>Місце, де вчать <br>мислити </p>
                     </div>
+                    <input type="hidden" name="SheetName" value="test">
+                    <input type="hidden" name="utm_source">
+                    <input type="hidden" name="utm_campaign">
+                    <input type="hidden" name="utm_content">
+                    <input type="hidden" name="utm_term">
                     <label class="visually-hidden" for="name">Ім’я</label>
-                    <input id="name" type="text" placeholder="Ім’я" />
+                    <input id="name" type="text" name="Ім'я" placeholder="Ім’я" />
 
                     <label class="visually-hidden" for="phone">Телефон</label>
-                    <input id="phone" type="tel" placeholder="+380 95 37 02 963" />
-
+                    <input id="phone" type="tel" name="Телефон" placeholder="+380 95 37 02 963" />
+                    <div id="phone-error" class="phone-error" style="opacity:0; color:#e63946;">
+                        Неправильний формат номеру
+                    </div>
                     <label class="visually-hidden" for="telegram">Telegram</label>
-                    <input id="telegram" type="text" placeholder="Нік в Телеграм, через @" />
+                    <input id="telegram" type="text" name="Телеграм" placeholder="Нік в Телеграм, через @" />
 
-                    <button type="submit">
+                    <button id="submit-btn-1">
                         ЗАЛИШИТИ ЗАЯВКУ
                         <div class="form-note">
                             <span>65% місць</span> <b>вже зайнято</b>
@@ -116,7 +156,7 @@
                     <p>прямо зараз – заповнюйте анкету</p>
 
                 </div>
-                <a class="color-black">
+                <a class="color-black" href="#form">
                     Хочу бонус
                 </a>
             </div>
@@ -247,7 +287,7 @@
                     Після заповнення анкети ви миттєво
                     <span>отримаєте бонусний урок</span> і зможете створити своє перше відео через нейромережі
                 </div>
-                <a href="" class="color-black">
+                <a href="#form" class="color-black">
                     хочу деталі
                 </a>
             </div>
@@ -289,7 +329,7 @@
                         “Як створити перше відео через ШІ, <br>
                         яке точно набере перегляди”
                     </p>
-                    <a href="">Заповнити форму</a>
+                    <a href="#form">Заповнити форму</a>
                     <p class="color-black">65% місць <span>вже зайнято</span></p>
                 </div>
             </div>
@@ -365,7 +405,7 @@
                         Новий рік по-новому
                     </div>
                 </div>
-                <a href="">Залишити заявку</a>
+                <a href="#form">Залишити заявку</a>
                 <div class="tooltip">
                     65% місць <span>вже зайнято</span>
                 </div>

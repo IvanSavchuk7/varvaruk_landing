@@ -107,7 +107,7 @@ section.hero img.author-image {
     display: flex;
     align-items: center;
     gap: 1rem;
-    padding: 1.5rem 2rem 3rem 2rem;
+    padding: 1.5rem 2rem 3.5rem 2rem;
     width: 100%;
     margin-top: -4rem;
     position: relative;
@@ -267,6 +267,24 @@ section.for .content .item img {
     max-width: 100%;
     object-fit: contain;
     align-self: flex-start;
+}
+.input-error {
+    border: 1px solid #e63946 !important;
+}
+
+.phone-error {
+    color: #e63946;
+    font-size: .9rem;
+    margin-top: calc(-1.5rem + .9rem);
+    font-weight: bold;
+    display: block;
+    margin-bottom: .5rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
 }
 section.for .offer {
     padding: 2.5rem;
@@ -851,9 +869,14 @@ section.pink .support .support-link {
     section.hero {
         padding: 2rem;
     }
+    section.for {
+        background-position: 0 190%, 100% 0;
+    }
 }
 @media only screen and (min-width: 1240px) and (max-width: 1600px) {
-
+    section.for {
+        background-position: 0 180%, 100% 0;
+    }
 }
 @media only screen and (min-width: 1240px) and (max-width: 1440px) {
     html {
@@ -888,6 +911,9 @@ section.pink .support .support-link {
     }
     main.main > section.stats {
         padding-top: 0;
+    }
+    section.for {
+        background-position: 0 150%, 100% 0;
     }
 }
 @media only screen and (min-width: 830px) and (max-width: 1239px) {
@@ -961,10 +987,16 @@ section.pink .support .support-link {
     main.main > section.stats {
         padding-top: 0;
     }
+    section.for {
+        background-position: 0 150%, 100% 0;
+    }
 }
 @media only screen and (min-width: 830px) and (max-width: 1023px) {
     html {
         font-size: 12px;
+    }
+    section.for {
+        background-position: 0 160%, 100% 0;
     }
 }
 @media only screen and (max-width: 829px) {
@@ -1106,6 +1138,9 @@ section.pink .support .support-link {
     section.stats .content .title {
         font-size: 1.75rem;
     }
+    section.for {
+        background-position: 0 110%, 100% 0;
+    }
     section.stats .content .inner .stats-container {
         gap: 1rem;
     }
@@ -1234,6 +1269,11 @@ section.pink .support .support-link {
         padding-right: 0;
     }
 }
+@media only screen and (max-width: 700px) {
+    section.for {
+        background-position: 0 107%, 100% 0;
+    }
+}
 @media only screen and (max-width: 600px) {
     html {
         font-size: 14px;
@@ -1333,6 +1373,15 @@ section.pink .support .support-link {
     .inline-form button {
         font-size: 1.5rem;
     }
+    section.bonus {
+        transform: skewY(-2deg);
+        background-color: #6C53E7;
+        background-image: url(assets/images/bonus-bg.png);
+        background-repeat: no-repeat;
+        background-size: auto 50%;
+        background-position: 100% 100%;
+        padding: 6rem 4rem 8rem 4rem;
+    }
 }
 @media only screen and (max-width: 480px) {
     .inline-form, section.hero .form-wrapper .tooltip,section.hero img.author-image {
@@ -1346,7 +1395,7 @@ section.pink .support .support-link {
         font-size: 1.5rem;
     }
     .inline-form {
-        padding: 1rem 1.25rem 3rem 1.25rem;
+        padding: 1rem 1.25rem 3.5rem 1.25rem;
     }
     html {
         font-size: 13px;
@@ -1409,6 +1458,9 @@ section.pink .support .support-link {
     }
     section.pink .content .grid > .item .text {
         font-size: 1.2rem;
+    }
+    section.for {
+        background-position: 0 105%, 100% 0;
     }
 }
 @media only screen and (max-width: 420px) {
