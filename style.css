@@ -925,6 +925,9 @@ section.hero .form-wrapper img.mobile {
     main.main > section {
         padding: 3rem 2rem;
     }
+    main.main > section.youtube-stats {
+        padding-top: 0;
+    }
     section.after .content > .item {
         padding-top: 10rem;
     }
@@ -950,7 +953,7 @@ section.hero .form-wrapper img.mobile {
         padding-top: 8rem;
     }
     main.main > section.stats {
-        padding-top: 0;
+        padding-bottom: 6rem;
     }
     section.for {
         background-position: 0 150%, 100% 0;
@@ -962,6 +965,12 @@ section.hero .form-wrapper img.mobile {
     }
     main.main > section {
         padding: 2rem 1rem;
+    }
+    main.main > section.stats {
+        padding-bottom: 6rem;
+    }
+    main.main > section.youtube-stats {
+        padding-top: 0;
     }
     section.hero .title {
         font-size: 3.5rem;
@@ -986,7 +995,7 @@ section.hero .form-wrapper img.mobile {
         padding: 0 1rem 4rem;
     }
     main.main > section.stats {
-        padding-bottom: 4rem;
+        padding-bottom: 6rem;
     }
     section.hero .title > div img[src="assets/images/icon-1.png"] {
         height: 3.5rem;
@@ -1046,6 +1055,9 @@ section.hero .form-wrapper img.mobile {
     main.main > section {
         padding: 2rem 1rem;
     }
+    main.main > section.youtube-stats {
+        padding-top: 0;
+    }
     section.hero .title {
         font-size: 2.25rem;
     }
@@ -1068,6 +1080,9 @@ section.hero .form-wrapper img.mobile {
         width: 75%;
         height: auto;
         margin: auto;
+    }
+    main.main > section.stats {
+        padding-bottom: 6rem;
     }
     .form-wrapper {
         margin-top: 4rem;
