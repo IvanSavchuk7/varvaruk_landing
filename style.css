@@ -29,6 +29,9 @@ html {
     border: none;
     font-family: 'Kharkiv Tone', sans-serif;
 }
+section.hero .form-wrapper .abs.mobile {
+    display: none;
+}
 section.hero {
     display: flex;
     flex-direction: column;
@@ -566,6 +569,7 @@ section.bonus {
     background-size: auto 50%, 20% auto;
     background-position: 100% 100%, 95% 0;
     padding: 6rem 4rem 8rem 4rem;
+    overflow: hidden;
 }
 section.bonus .content {
     width: 100%;
@@ -598,6 +602,15 @@ section.bonus .title > div span {
 section.bonus a {
     margin-top: 1rem;
     transform: skewY(2deg);
+    position: relative;
+}
+section.bonus a .abs {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: calc(100% + 5rem);
+    top: 50%;
+    width: 7rem;
+    height: auto;
 }
 section.youtube-stats {
     padding: 0 4rem 4rem 4rem;
@@ -1233,6 +1246,9 @@ section.hero .form-wrapper img.mobile {
         width: 75%;
         margin: auto;
     }
+    section.hero .form-wrapper .abs.mobile {
+        display: block;
+    }
     section.youtube-stats .inner .tooltip .left {
         font-size: 1.5rem;
     }
@@ -1254,8 +1270,16 @@ section.hero .form-wrapper img.mobile {
     section.pink .content .grid > .item .text {
         font-size: .9rem;
     }
-    section.pink .content .grid > .item .text br {
+    section.pink .content .grid > .item .text br,
+    section.hero .form-wrapper .abs:not(.mobile) {
         display: none;
+    }
+    section.hero .form-wrapper form .abs {
+        top: -8.5rem;
+        right:-3rem;
+    }
+    section.hero .form-wrapper form .abs img {
+        height: 10rem;
     }
     section.pink .content .grid > .item:nth-child(2) .abs {
         right: -1.5rem;
@@ -1358,6 +1382,10 @@ section.hero .form-wrapper img.mobile {
     section.for .offer p {
         font-size: 1.2rem;
     }
+    section.hero .form-wrapper form .abs {
+        top: -100%;
+        right: 0;
+    }
     section.for .offer .abs {
         top: 75%;
     }
@@ -1456,11 +1484,6 @@ section.hero .form-wrapper img.mobile {
         width: 90%;
         margin: auto;
     }
-    section.hero .form-wrapper form .abs {
-        top: -75%;
-        right: 2rem;
-        font-size: 1.2rem;
-    }
     section.hero .form-wrapper form .abs p {
         font-size: 1rem;
     }
@@ -1475,7 +1498,7 @@ section.hero .form-wrapper img.mobile {
         font-size: 1.5rem;
     }
     main.main > section.for {
-        background-size: 300% auto;
+        background-size: 300% auto, 60% auto;
         background-position: 0 115%, 100% 0;
         padding-bottom: 12rem;
     }
@@ -1592,6 +1615,10 @@ section.hero .form-wrapper img.mobile {
     section.hero img.author-image {
         width: 90%;
         margin: 0;
+    }
+    section.hero .form-wrapper form .abs {
+        top: -80%;
+        right: 0;
     }
     section.stats .content .inner .stats-container > div:first-child {
         height: 7.5rem;
@@ -1737,6 +1764,12 @@ section.hero .form-wrapper img.mobile {
     }
     section.after .content > .item p, section.for .offer p {
         font-size: 1.3rem;
+    }
+    section.hero .form-wrapper form .abs {
+        top: -70%;
+    }
+    section.hero .form-wrapper form .abs img {
+        height: 8rem;
     }
 }
 @media only screen and (max-width: 380px) {
