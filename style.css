@@ -94,7 +94,7 @@ section.hero .title .abs img {
 }
 section.hero img.author-image {
     height: 50vh;
-    width: fit-content;
+    width: auto;
     display: block;
     margin: 2rem 0 0 2rem;
     position: relative;
@@ -197,7 +197,7 @@ section.hero .form-wrapper form .abs {
 }
 section.hero .form-wrapper form .abs img {
     height: 2.5rem;
-    width: fit-content;
+    width: auto;
     min-height: 2.5rem;
     max-width: 100%;
     object-fit: contain;
