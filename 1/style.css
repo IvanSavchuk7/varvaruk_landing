@@ -1,0 +1,595 @@
+@font-face {
+    font-family: 'Kharkiv Tone';
+    src: local('Kharkiv Tone'), local('Kharkiv Tone'),
+    url('../assets/Kharkiv_Tone.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+.color-lightblue {color: #B2DDF2;}
+.color-pink {color: #FF96B7;}
+.color-lightred {color: #FC6121;}
+.color-black { color: #000000;}
+.bg-orange { background: #FF8A5E;}
+.bg-lightred {background: #FC6121;}
+html {
+    font-family: 'Kharkiv Tone', sans-serif;
+    font-size: 20px;
+    background: #34AD6A;
+    scroll-behavior: smooth;
+    color: #FFFFFF;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+    line-height: 104%;
+    text-decoration: none;
+    border: none;
+    font-family: 'Kharkiv Tone', sans-serif;
+}
+section.hero .form-wrapper .abs.mobile {
+    display: none;
+}
+section.hero {
+    padding: 2rem 4rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-image: url('images/hero-bg.png');
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+}
+section.hero .abs {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    z-index: 5;
+}
+section.hero .abs img:first-child {
+    width: 100%;
+    height: auto;
+}
+section.hero .abs img:last-child {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+    left: calc(50% + 1rem);
+    top: calc(100% - 2rem);
+    transform: translate(-50%, -50%);
+}
+section.hero .wordmark {
+    height: 1.25rem;
+    width: auto;
+    margin-bottom: 2rem;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
+}
+section.hero .title {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.hero .title .pre {
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    opacity: .8;
+}
+section.hero .title p {
+    font-size: 4rem;
+    text-transform: uppercase;
+}
+section.hero .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #FFFFFF;
+    width: fit-content;
+}
+section.hero .content .list {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: nowrap;
+}
+section.hero .content .list > div {
+    padding: 10px;
+    background: #004739;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+section.hero .content .list > div img {
+    width: 1rem;
+    height: auto;
+}
+section.hero .content .list > div p {
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+}
+section.hero .content .offer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.hero .content .offer > p,
+section.hero .content .offer > p span {
+    color: #000000;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2rem;
+}
+section.hero .content .offer > p span {
+    font-weight: 700;
+}
+section.hero .content .offer .bonus {
+    display: flex;
+    gap: .75rem;
+    align-items: center;
+    padding: 1rem;
+    background: #34AD6A;
+    width: fit-content;
+}
+section.hero .content .offer .bonus img {
+    width: 2.5rem;
+    height: auto;
+    min-width: 2.5rem;
+}
+section.hero .content .offer .bonus p {
+    font-size: 1.2rem;
+    font-family: 'Inter', sans-serif;
+}
+section.hero .content  a {
+    padding: 1rem 2rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    border: none;
+    font-family: 'Kharkiv Tone', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+    font-size: 1.25rem;
+    background: #FC6121;
+    color: #FFFFFF;
+    margin-top: 1rem;
+}
+section.hero .content .tooltip {
+    font-size: .9rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    color: #000000;
+}
+section.for {
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    background-color: #34AD6A;
+    gap: 2rem;
+    background-image: url("../assets/images/for-bg-2.png");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: 0 225%;
+}
+section.for .title {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+}
+section.for .title span {
+    background: #004739;
+    color: #FFFFFF;
+}
+section.for .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    grid-auto-flow: row;
+    grid-template-areas:
+    ". a b"
+    "c d e";
+}
+.a { grid-area: a; }
+.b { grid-area: b; }
+.c { grid-area: c; }
+.d { grid-area: d; }
+.e { grid-area: e; }
+
+section.for .content .item {
+    background: #FFFFFF;
+    padding: 1rem 2rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+section.for .content .item .item-title {
+    font-size: 1.1rem;
+    line-height: 115%;
+    text-transform: uppercase;
+}
+section.for .content .item .description {
+    font-family: 'Inter', sans-serif;
+}
+section.for .content .item img {
+    margin-bottom: .5rem;
+    height: 3rem;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
+}
+section.for .offer {
+    padding: 1.5rem 2rem;
+    width: 100%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url("../assets/images/offer-bg.png");
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 75% 50%;
+}
+section.for .offer p {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    line-height: 110%;
+    width: fit-content;
+}
+section.for .offer > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section.for .offer p:first-of-type {
+    padding: 1rem;
+    background: #FFFFFF;
+}
+section.for .offer img.mobile {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+section.for .offer p:last-child {
+    font-size: 2rem;
+}
+section.for .offer .abs {
+    position: absolute;
+    right: -3rem;
+    top: 0;
+    height: auto;
+    transform: rotate(10deg);
+    width: 3rem;
+}
+section.for .offer a {
+    padding: 1rem 2rem;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    background: #FFFFFF;
+    text-transform: uppercase;
+    border: none;
+    font-size: 1.2rem;
+    font-family: 'Kharkiv Tone', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease;
+}
+section.for .offer a {
+    padding: 1rem 2rem;
+    font-size: 1.75rem;
+}
+section.hero .title.mobile,
+section.hero .form-wrapper img.mobile {
+    display: none;
+}
+br.mobile,
+section.hero img.mobile {
+    display: none;
+}
+
+@media screen and (min-width: 2560px) and (max-width: 3840px) {
+    html {
+        font-size: 24px;
+    }
+    section.hero, section.for {
+        padding: 3rem 15%;
+    }
+}
+@media only screen and (min-width: 1921px) and (max-width: 2559px) {
+    html {
+        font-size: 22px;
+    }
+    section.hero, section.for {
+        padding: 3rem 10%;
+    }
+}
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+    section.for {
+        background-position: 0 190%, 100% 0;
+    }
+}
+@media only screen and (min-width: 1240px) and (max-width: 1600px) {
+    section.for {
+        background-position: 0 180%, 100% 0;
+    }
+}
+@media only screen and (min-width: 1240px) and (max-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+    main.main > section {
+        padding: 3rem 2rem;
+    }
+    section.for {
+        background-position: 0 150%, 100% 0;
+    }
+    section.hero .abs {
+        width: 33%;
+    }
+}
+@media only screen and (min-width: 830px) and (max-width: 1239px) {
+    html {
+        font-size: 16px;
+    }
+    main.main > section {
+        padding: 2rem 1rem;
+    }
+    section.for .content {
+        gap: 1rem;
+    }
+    section.for .content .item {
+        padding: 1rem;
+    }
+    section.for {
+        background-position: 0 150%, 100% 0;
+    }
+    section.hero .abs {
+        width: 33%;
+    }
+}
+@media only screen and (min-width: 830px) and (max-width: 1023px) {
+    html {
+        font-size: 12px;
+    }
+    section.for {
+        background-position: 0 160%, 100% 0;
+    }
+    section.hero .content .list > div {
+        padding: 8px;
+    }
+    section.hero .content .list > div p {
+        font-size: .85rem;
+    }
+    section.hero .content .list > div img {
+        width: .9rem;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 829px) {
+    html {
+        font-size: 16px;
+    }
+    br.mobile {
+        display: block;
+    }
+    br:not(.mobile) {
+        display: none;
+    }
+    main.main > section {
+        padding: 2rem 2rem;
+    }
+    section.hero {
+        background-position: right bottom;
+        background-size: 50% auto;
+    }
+    section.hero .abs {
+        display: none;
+    }
+    section.hero .wordmark {
+        margin-bottom: 1rem;
+        height: 1rem;
+    }
+    section.hero .title .pre,
+    section.hero .title p {
+        text-align: center;
+    }
+    section.hero .title .pre {
+        font-size: 2rem;
+    }
+    section.hero .title p {
+        font-size: 3.25rem;
+    }
+    section.for .title,
+    section.for .title span {
+        font-size: 3rem;
+        font-family: 'Kharkiv Tone', sans-serif;
+    }
+    section.hero .content .list {
+        flex-direction: column;
+        align-items: center;
+    }
+    section.hero .content .list > div {
+        width: fit-content;
+    }
+    section.hero .content .list > div p {
+        font-size: 1.1rem;
+    }
+    section.hero .content a {
+        font-size: 2rem;
+    }
+    section.hero img.mobile {
+        display: block;
+        margin: 0 auto;
+        width: 80%;
+    }
+    section.for .content {
+        width: 80%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+            "e";
+    }
+    section.for .content .item .item-title {
+        font-size: 1.25rem;
+    }
+    section.for .content .item .description {
+        font-size: 1.15rem;
+    }
+    section.for .content .item img {
+        height: 4.5rem;
+        min-height: 4.5rem;
+    }
+    section.for .offer {
+        width: 80%;
+        flex-direction: column;
+        padding: 1rem;
+        position: relative;
+    }
+    section.for .offer p:first-of-type {
+        position: initial;
+    }
+    section.for .offer p br {
+        display: none;
+    }
+    section.for .offer .abs {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        height: auto;
+        transform: translate(-50%, -50%) rotate(10deg);
+        width: 3rem;
+    }
+    section.for .offer p {
+        font-size: 1.35rem;
+    }
+    section.for .offer a {
+        margin-top: 1rem;
+    }
+    section.for {
+        background-position: 0 110%, 100% 0;
+    }
+    section.for .offer {
+        background-image: none;
+        padding: 1.5rem;
+    }
+    section.for .offer img.mobile {
+        display: block;
+    }
+    section.for .offer p {
+        text-align: center;
+        margin: auto;
+    }
+}
+@media only screen and (max-width: 700px) {
+    section.for {
+        background-position: 0 107%, 100% 0;
+    }
+}
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+    section.for .offer img.mobile {
+        margin: -1rem auto;
+    }
+    section.for .content,
+    section.for .offer {
+        width: 100%;
+    }
+    section.for .offer p {
+        font-size: 1.2rem;
+    }
+    section.for .offer .abs {
+        top: 75%;
+    }
+    section.for .offer a {
+        font-size: 1.5rem;
+    }
+    section.for .title br:not(.mobile) {
+        display: none;
+    }
+    section.for .content .item .description {
+        font-size: 1.35rem;
+    }
+    section.for .offer a {
+        padding: 1.25rem 2rem;
+        width: 100%;
+    }
+    section.for .title {
+        font-size: 3rem;
+    }
+    section.for .content .item .item-title {
+        font-size: 1.5rem;
+    }
+    main.main > section.for {
+        background-size: 300% auto, 60% auto;
+        background-position: 0 115%, 100% 0;
+        padding-bottom: 6rem;
+    }
+    br.mobile {
+        display: block;
+    }
+    section.hero .content .offer .bonus p br {
+        display: none;
+    }
+    section.hero .title .pre {
+        font-size: 1.75rem;
+    }
+    section.hero img.mobile {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+    section.for {
+        background-position: 0 105%, 100% 0;
+    }
+    section.hero .title p {
+        font-size: 3rem;
+    }
+}
+@media only screen and (max-width: 420px) {
+    section.for .offer p {
+        font-size: 1.25rem;
+    }
+    main.main > section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    section.hero .content {
+        padding: 1rem;
+    }
+    section.hero .content a {
+        font-size: 2.75rem;
+        padding: .75rem;
+    }
+}
+@media only screen and (max-width: 380px) {
+    html {
+        font-size: 12px;
+    }
+}
