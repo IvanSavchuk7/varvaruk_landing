@@ -126,7 +126,7 @@ section.hero .content .left {
 }
 section.hero .content .left img {
     width: 5rem;
-    height: fit-content;
+    height: 5rem;
 }
 section.hero .tooltip {
     text-align: center;
@@ -152,7 +152,7 @@ section.hero .content .right .text {
 }
 section.hero .content .right img {
     width: 4.5rem;
-    height: fit-content;
+    height: 3.5rem;
 }
 section.hero .content .right p {
     line-height: 140%;
