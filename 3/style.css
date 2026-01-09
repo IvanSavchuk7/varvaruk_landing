@@ -125,8 +125,8 @@ section.hero .content .left {
     margin-top: 1rem;
 }
 section.hero .content .left img {
-    width: 5rem;
-    height: 5rem;
+    width: 114px;
+    height: 92px;
 }
 section.hero .tooltip {
     text-align: center;
@@ -151,8 +151,8 @@ section.hero .content .right .text {
     flex-direction: column;
 }
 section.hero .content .right img {
-    width: 4.5rem;
-    height: 3.5rem;
+    width: 75px;
+    height: 55px;
 }
 section.hero .content .right p {
     line-height: 140%;
