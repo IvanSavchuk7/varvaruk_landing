@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Kharkiv Tone';
     src: local('Kharkiv Tone'), local('Kharkiv Tone'),
-    url('assets/Kharkiv_Tone.ttf') format('truetype');
+    url('../assets/Kharkiv_Tone.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -15,7 +15,7 @@
 html {
     font-family: 'Kharkiv Tone', sans-serif;
     font-size: 20px;
-    background: #004739;
+    background: #FF96B7;
     scroll-behavior: smooth;
     color: #FFFFFF;
 }
@@ -29,23 +29,41 @@ html {
     border: none;
     font-family: 'Kharkiv Tone', sans-serif;
 }
-section.hero .form-wrapper .abs.mobile {
-    display: none;
+main {
+    position: relative;
+    z-index: 1;
 }
+
 section.hero {
+    transform: skewY(-2deg);
+    background-color: #004739;
+    padding: 2rem 4rem 10rem 4rem;
+    position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #008ED5;
-    padding: 2rem 5rem;
-    background-image: url('assets/images/header-bg-1.png'), url('assets/images/header-bg-2.png'), url('assets/images/header-bg-3.png');
+    gap: 1.5rem;
+    background-image: url("images/hero-bg-1.png"), url("images/hero-bg-2.png"), url("images/hero-bg-3.png");
+    background-position: top right, 0 20%, 7.5% 90%;
     background-repeat: no-repeat;
-    background-size: 30% auto, 20% auto, 60% auto;
-    background-position: 100% 0, 0 100%, 100% 100%;
+    background-size: auto 45%, auto 70%, 4rem 4rem;
+    z-index: 100;
+}
+main .abs {
+    position: absolute;
+    background: #004739;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 8rem;
+    z-index: -10;
+}
+section.hero > * {
+    transform: skewY(2deg);
 }
 section.hero .wordmark {
     height: 1.25rem;
     width: auto;
-    margin-bottom: 4rem;
+    margin: 0 auto 2rem auto;
     max-width: 100%;
     object-fit: contain;
     align-self: flex-start;
@@ -53,290 +71,116 @@ section.hero .wordmark {
 section.hero .title {
     font-size: 4rem;
     text-transform: uppercase;
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+}
+section.hero .title img {
+    width: 5rem;
+    height: auto;
+    transform: skewY(2deg);
+}
+section.hero .after {
     display: flex;
-    gap: 1rem;
     flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+}
+section.hero .after > div {
+    font-size: 1.1rem;
+    text-transform: uppercase;
     width: fit-content;
     margin: auto;
-    position: relative;
-}
-section.hero .title > div {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-}
-section.hero .title > div img[src="assets/images/icon-1.png"] {
-    height: 4rem;
-    width: auto;
-}
-section.hero .title > div img[src="assets/images/icon-2.png"] {
-    height: 3.5rem;
-    width: auto;
-}
-section.hero .title > div img[src="assets/images/icon-5.png"] {
-    height: 4rem;
-    width: auto;
-}
-section.hero .title .abs {
-    position: absolute;
-    right: 0;
-    bottom: -3rem;
-    z-index: 10;
-    font-size: .9rem;
-    display: flex;
-    gap: .5rem;
-}
-section.hero .title .abs img {
-    height: 1.8rem;
-    width: auto;
-    min-height: 1.8rem;
-}
-section.hero img.author-image {
-    height: 50vh;
-    width: auto;
-    display: block;
-    margin: 2rem 0 0 2rem;
-    position: relative;
-    z-index: 1;
-}
-.form-wrapper {
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-.inline-form {
-    background: #FFFFFF;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 2rem 3.5rem 2rem;
-    width: 100%;
-    margin-top: -4rem;
-    position: relative;
-    z-index: 10;
-}
-.inline-form input {
-    flex: 1;
-    height: 3rem;
-    padding: 0 1rem;
-    background: #f1f1f1;
-    border: 1px solid #EBEBEB;
-    outline: none;
-    font-size: .9rem;
-    color: #1D1D1D;
-    font-family: 'Inter', sans-serif;
-}
-.inline-form input::placeholder {
-    color: #1d1d1d;
-}
-.inline-form button {
-    height: 3rem;
-    padding: 0 1rem;
-    background: #008ED5;
-    color: #fff;
-    border: none;
-    font-size: 1.1rem;
-    font-family: 'Kharkiv Tone', sans-serif;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.2s ease;
-    position: relative;
-}
-.inline-form button:hover {
-    background: #0072b0;
-}
-.form-note {
-    position: absolute;
-    left: 5px;
-    margin-top: 1.5rem;
-    font-size: .9rem;
-    color: #2b2b2b;
-    text-align: right;
-    font-family: 'Inter', sans-serif;
-
-}
-.form-note span {
-    font-weight: 400;
-    font-family: 'Inter', sans-serif;
-}
-.form-note b {
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-}
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-section.hero .form-wrapper .tooltip {
-    margin: 1rem 0 0 2px;
-
-}
-section.hero .form-wrapper .tooltip > span {
-    font-family: 'Inter', sans-serif;
-    font-size: .9rem;
-}
-section.hero .form-wrapper .tooltip span:last-of-type {
-    font-weight: 700;
-}
-section.hero .form-wrapper form .abs {
-    position: absolute;
-    right: 0;
-    top: -4rem;
-    display: flex;
-    gap: .5rem;
-    text-transform: uppercase;
-    align-items: center;
-}
-section.hero .form-wrapper form .abs img {
-    height: 2.5rem;
-    width: auto;
-    min-height: 2.5rem;
-    max-width: 100%;
-    object-fit: contain;
-    align-self: flex-start;
-}
-section.hero .form-wrapper form .abs p {
-    line-height: 125%;
-}
-section.for {
-    padding: 2rem 4rem;
-    display: flex;
-    flex-direction: column;
-    background-color: #008ED5;
-    gap: 2rem;
-    background-image: url("assets/images/for-bg-2.png"), url("assets/images/for-bg-1.png");
-    background-repeat: no-repeat;
-    background-size: 100% auto, 60% auto;
-    background-position: 0 225%, 100% 0;
-}
-section.for .title {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-}
-section.for .title span {
-    background: #FFFFFF;
-    color: #008ED5;
-}
-section.for .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-auto-columns: 1fr;
-    gap: 1.5rem;
-    max-width: 1400px;
-    width: 100%;
-    margin: auto;
-    grid-auto-flow: row;
-    grid-template-areas:
-    ". a b"
-    "c d e";
-}
-.a { grid-area: a; }
-.b { grid-area: b; }
-.c { grid-area: c; }
-.d { grid-area: d; }
-.e { grid-area: e; }
-
-section.for .content .item {
-    background: #FFFFFF;
-    padding: 1rem 2rem 1rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-section.for .content .item .item-title {
-    font-size: 1.1rem;
-    line-height: 115%;
-    text-transform: uppercase;
-}
-section.for .content .item .description {
-    font-family: 'Inter', sans-serif;
-}
-section.for .content .item img {
-    margin-bottom: .5rem;
-    height: 3rem;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-    align-self: flex-start;
-}
-.input-error {
-    border: 1px solid #e63946 !important;
-}
-
-.phone-error {
-    color: #e63946;
-    font-size: .9rem;
-    margin-top: calc(-1.5rem + .9rem);
-    font-weight: bold;
-    display: block;
-    margin-bottom: .5rem;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 100%;
     text-align: center;
 }
-section.for .offer {
-    padding: 1.5rem 2rem;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
+section.hero .after > div:first-child {
+    opacity: .8;
+}
+section.hero .after > div:last-child {
+    position: relative;
+}
+section.hero .after > div:last-child .abs {
+    position: absolute;
+    left: -1.6rem;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2.25rem;
+    height: auto;
+}
+section.hero .content {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+}
+section.hero .content * {
+    font-family: 'Inter', sans-serif;
+}
+section.hero .content .left,
+section.hero .content .right {
+    display: flex;
+    gap: 1rem;
+}
+section.hero .content .left {
     align-items: center;
-    background-image: url("assets/images/offer-bg.png");
-    background-repeat: no-repeat;
-    background-size: auto 100%;
-    background-position: 75% 50%;
+    margin-top: 1rem;
 }
-section.for .offer p {
-    text-transform: uppercase;
-    font-size: 1.25rem;
-    line-height: 110%;
-    width: fit-content;
+section.hero .content .left img {
+    width: 5rem;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
 }
-section.for .offer > div {
+section.hero .tooltip {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+section.hero .tooltip span {
+    font-weight: 700;
+    color: #FC6121;
+}
+section.hero .content .left p {
+    line-height: 135%;
+}
+section.hero .content .left p span {
+    font-weight: 700;
+}
+section.hero .content .right {
+    display: flex;
+}
+section.hero .content .right .text {
+    gap: .7rem;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
 }
-section.for .offer p:first-of-type {
-    padding: 1rem;
-    background: #FFFFFF;
+section.hero .content .right img {
+    width: 4.5rem;
+    height: fit-content;
 }
-section.for .offer img.mobile {
-    width: 100%;
+section.hero .content .right p {
+    line-height: 140%;
+}
+section.hero .content .right .text > p:last-of-type {
+    font-weight: 700;
+}
+section.hero .content .right .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+section.hero .content .right .list > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+section.hero .content .right .list > div p {
+    font-size: .9rem;
+}
+section.hero .content .right .list > div img {
+    width: 1rem;
     height: auto;
-    display: none;
 }
-section.for .offer p:last-child {
-    font-size: 2rem;
-}
-section.for .offer .abs {
-    position: absolute;
-    right: -3rem;
-    top: 0;
-    height: auto;
-    transform: rotate(10deg);
-    width: 3rem;
-}
-section.for .offer a,
-section.bonus a,
-section.youtube-stats a,
-section.pink a:not(.support-link) {
+section.hero a {
     padding: 1rem 2rem;
     display: flex;
     width: fit-content;
@@ -345,272 +189,26 @@ section.pink a:not(.support-link) {
     background: #FFFFFF;
     text-transform: uppercase;
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.75rem;
     font-family: 'Kharkiv Tone', sans-serif;
     cursor: pointer;
     white-space: nowrap;
     transition: background 0.2s ease;
-}
-section.for .offer a {
-    padding: 1rem 2rem;
-    font-size: 1.75rem;
-}
-section.after {
-    padding: 2rem 4rem 4rem 4rem;
-    background-color: #004739;
-    background-image: url("assets/images/after-bg.png");
-    background-repeat: no-repeat;
-    background-size: 40% auto;
-    background-position: 100% 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-section.after .title {
-    position: relative;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-}
-section.after .title .abs {
-    position: absolute;
-    right: 5%;
-    top: -1rem;
-    height: 8rem;
-    width: auto;
-}
-section.after .title > div {
-    font-size: 3rem;
-    text-transform: uppercase;
-}
-section.after .title > div > span {
-    background: #FFFFFF;
-}
-section.after .content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-auto-columns: 1fr;
-    gap: 0px 0px;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-    grid-auto-flow: row;
-    grid-template-areas:
-    "a b c"
-    "d e .";
+    margin: 2rem auto 0 auto;
 }
 
-.a { grid-area: a; }
-.b { grid-area: b; }
-.c { grid-area: c; }
-.d { grid-area: d; }
-.e { grid-area: e; }
-
-section.after .content > .item {
-    background: #34AD6A;
-    padding: 12rem 1.5rem 1.5rem 1.5rem;
-}
-section.after .content > .item:nth-child(odd) {
-    background: #6855DF;
-}
-section.after .content > .item p {
-    font-size: 1.1rem;
-    font-family: 'Inter', sans-serif;
-    line-height: 105%;
-}
-section.after .content > .item p span {
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-}
-section.after .content > .item.a {
-    background-image: url("assets/images/after-icon-1.png");
-    background-repeat: no-repeat;
-    background-size: auto 10rem;
-    background-position: 0 0;
-}
-section.after .content > .item.b {
-    background-image: url("assets/images/after-icon-2.png");
-    background-repeat: no-repeat;
-    background-size: auto 12rem;
-    background-position: 100% 0;
-}
-section.after .content > .item.c {
-    background-image: url("assets/images/after-icon-3.png");
-    background-repeat: no-repeat;
-    background-size: auto 10rem;
-    background-position: 1rem 1rem;
-}
-section.after .content > .item.d {
-    background-image: url("assets/images/after-icon-4.png");
-    background-repeat: no-repeat;
-    background-size: auto 11rem;
-    background-position: 0 0;
-}
+br.mobile,
+section.hero img.mobile,
 section.pink .support .mobile {
     display: none;
 }
-section.after .content > .item.e {
-    background-image: url("assets/images/after-icon-5.png");
-    background-repeat: no-repeat;
-    background-size: auto 9rem;
-    background-position: 1rem 1rem;
-}
-section.stats {
-    padding: 0 4rem 6rem 4rem;
-    background-color: #004739;
-    background-image: url("assets/images/stats-bg.png");
-    background-repeat: no-repeat;
-    background-size: 40% auto;
-    background-position: 100% 0;
-}
-section.stats .content {
-    padding: 2.5rem;
-    background-color: #D9D9D9;
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-}
-section.stats .content .title {
-    font-size: 2.5rem;
+section.pink a:not(.support-link),
+section.youtube-stats a {
+    padding: .5rem 1.5rem;
     text-transform: uppercase;
-}
-section.stats .content .title > div:last-of-type {
-    position: relative;
-    width: fit-content;
-}
-section.stats .content .title > div:last-of-type .abs {
-    position: absolute;
-    right: -3rem;
-    bottom: .5rem;
-    height: 2.5rem;
-    width: auto;
-    min-height: 2.5rem;
-    transform: rotate(-8.5deg);
-}
-section.stats .content .inner {
-    padding: 1rem 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-}
-section.stats .content .inner .stats-container,
-section.stats .content .inner .years-container {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: space-between;
-    align-items: flex-end;
-}
-section.stats .content .inner .stats-container > div {
-    flex: 1;
-    padding: 3rem 1.5rem;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: center;
-}
-section.stats .content .inner .stats-container > div {
-    transform: scaleY(0);
-    transform-origin: bottom;
-    transition: transform 3s cubic-bezier(0.22, 1, 0.36, 1);
-}
-section.stats .content .inner .stats-container > div:first-child {
-    height: 10rem;
-}
-section.stats .content .inner .stats-container > div:nth-child(2) {
-    height: 20rem;
-    background: #6C53E7;
-}
-section.stats .content .inner .stats-container > div:last-child {
-    height: 25rem;
-    background: #004739;
-}
-section.stats .content .inner .stats-container.animate > div {
-    transform: scaleY(1);
-}
-.stats-container.animate > div:nth-child(1) {
-    transition-delay: 0s;
-}
-.stats-container.animate > div:nth-child(2) {
-    transition-delay: 0.5s;
-}
-.stats-container.animate > div:nth-child(3) {
-    transition-delay: 1s;
-}
-.stats-container > div > * {
-    transform: scaleY(1);
-}
-section.stats .content .inner .years-container > div {
-    text-align: center;
-    flex: 1;
-    font-size: 1.5rem;
-}
-section.stats .stats-container .text p:first-child {
-    font-size: 2.5rem;
-    padding-bottom: 5px;
-}
-section.stats .stats-container .text p:last-child {
-    text-transform: uppercase;
-}
-section.stats .content .offer-text {
-    font-family: 'Inter', sans-serif;
-    text-align: center;
-    font-weight: 700;
-    margin-top: 1rem;
-}
-section.stats .content .offer-text span {
-    font-family: 'Inter', sans-serif;
-}
-section.bonus {
-    transform: skewY(-2deg);
-    background-color: #6C53E7;
-    background-image: url("assets/images/bonus-bg.png"), url("assets/images/bonus-bg-2.png");
-    background-repeat: no-repeat;
-    background-size: auto 50%, 20% auto;
-    background-position: 100% 100%, 95% 0;
-    padding: 6rem 4rem 8rem 4rem;
-    overflow: hidden;
-}
-section.bonus .content {
-    width: 100%;
-    max-width: 1400px;
-    margin: auto;
-}
-section.bonus .title > div {
-    font-size: 2rem;
-    line-height: 120%;
-    text-transform: uppercase;
-    transform: skewY(2deg);
-    width: fit-content;
-}
-section.bonus .title > div:last-of-type {
-    position: relative;
-}
-section.bonus .title > div:last-of-type .abs {
-    position: absolute;
-    right: -5rem;
-    height: 3.5rem;
-    top: -1rem;
-    max-width: 100%;
-    object-fit: contain;
-    align-self: flex-start;
-}
-section.bonus .title > div span {
-    background: #FFFFFF;
-    color: #6C53E7;
-}
-section.bonus a {
-    margin-top: 1rem;
-    transform: skewY(2deg);
-    position: relative;
-}
-section.bonus a .abs {
-    position: absolute;
-    transform: translate(-50%, -50%);
-    left: calc(100% + 5rem);
-    top: 50%;
-    width: 7rem;
-    height: auto;
+    font-size: 1.25rem;
+    background: #FC6121;
+    color: #FFFFFF;
 }
 section.youtube-stats {
     padding: 0 4rem 4rem 4rem;
@@ -649,9 +247,10 @@ section.youtube-stats a,
 section.pink a:not(.support-link) {
     padding: .5rem 1.5rem;
     text-transform: uppercase;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     background: #FC6121;
     color: #FFFFFF;
+    text-align: center;
 }
 section.youtube-stats .inner .tooltip .right {
     font-family: 'Inter', sans-serif;
@@ -674,7 +273,7 @@ section.youtube-stats .bottom {
 section.youtube-stats .bottom .left {
     background-color: #004739;
     padding: 2rem 3rem 2rem 1.75rem;
-    background-image: url("assets/images/icon-6.png");
+    background-image: url("../assets/images/icon-6.png");
     background-repeat: no-repeat;
     background-size: auto 4rem;
     background-position: .5rem 100%;
@@ -716,7 +315,7 @@ section.youtube-stats a {
 section.pink {
     padding: 10rem 4rem 2rem 4rem;
     background-color: #FF96B7;
-    background-image: url("assets/images/youtube-bg-3.png");
+    background-image: url("../assets/images/youtube-bg-3.png");
     background-repeat: no-repeat;
     background-size: 100% auto;
     background-position: 0 0;
@@ -833,8 +432,10 @@ section.pink .content .bottom .right {
     text-transform: uppercase;
 }
 section.pink a:not(.support-link) {
-    margin: 2rem auto 1rem auto;
-    font-size: 1.2rem;
+    margin: 1rem auto 1rem auto;
+    width: fit-content;
+    display: block;
+    font-size: 1.5rem;
     padding: 1.5rem 3rem;
 }
 section.pink .content > .tooltip,
@@ -868,10 +469,6 @@ section.pink .support > div:last-child {
     flex-direction: column;
     justify-content: center;
 }
-
-br.mobile {
-    display: none;
-}
 section.pink .support > div:last-child p {
     font-family: 'Inter', sans-serif;
     font-size: .9rem;
@@ -892,31 +489,47 @@ section.pink .support .support-link {
     font-weight: 700;
     margin: .5rem 0 1rem 0;
 }
-section.hero .title.mobile,
-section.hero .form-wrapper img.mobile {
-    display: none;
+section.pink .support > div:first-child {
+    font-size: 2.25rem;
 }
 
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
     html {
         font-size: 24px;
     }
+    section.hero {
+        padding: 3rem 15%;
+    }
+    section.youtube-stats .inner .title,
+    section.youtube-stats .inner .tooltip,
+    section.youtube-stats .inner > img,
+    section.youtube-stats .bottom {
+        max-width: 1600px;
+    }
 }
 @media only screen and (min-width: 1921px) and (max-width: 2559px) {
-    font-size: 22px;
+    html {
+        font-size: 22px;
+    }
+    section.hero, section.for {
+        padding: 3rem 10%;
+    }
+    section.youtube-stats .inner .title,
+    section.youtube-stats .inner .tooltip,
+    section.youtube-stats .inner > img,
+    section.youtube-stats .bottom {
+        max-width: 1600px;
+    }
 }
 @media only screen and (min-width: 1441px) and (max-width: 1920px) {
-    section.hero {
-        padding: 2rem;
+    section.youtube-stats .inner .title {
+        font-size: 2.4rem;
     }
-    section.for {
-        background-position: 0 190%, 100% 0;
+    section.hero {
+        padding-bottom: 4rem;
     }
 }
 @media only screen and (min-width: 1240px) and (max-width: 1600px) {
-    section.for {
-        background-position: 0 180%, 100% 0;
-    }
 }
 @media only screen and (min-width: 1240px) and (max-width: 1440px) {
     html {
@@ -925,38 +538,17 @@ section.hero .form-wrapper img.mobile {
     main.main > section {
         padding: 3rem 2rem;
     }
-    main.main > section.youtube-stats {
-        padding-top: 0;
-    }
-    section.after .content > .item {
-        padding-top: 10rem;
-    }
-    section.after .content > .item.a {
-        background-size: auto 8rem;
-    }
-    section.after .content > .item.b {
-        background-size: auto 10rem;
-    }
-    section.after .content > .item.c {
-        background-size: auto 8rem;
-    }
-    section.after .content > .item.d {
-        background-size: auto 9rem;
-    }
-    section.after .content > .item.e {
-        background-size: auto 7rem;
-    }
-    section.youtube-stats .inner .title {
-        font-size: 2.25rem;
+    main.main > section.hero {
+        padding-bottom: 6rem;
     }
     main.main > section.pink {
         padding-top: 8rem;
     }
-    main.main > section.stats {
-        padding-bottom: 6rem;
+    main.main > section.youtube-stats {
+        padding-top: 0;
     }
-    section.for {
-        background-position: 0 150%, 100% 0;
+    section.youtube-stats .inner .title {
+        font-size: 2.25rem;
     }
 }
 @media only screen and (min-width: 830px) and (max-width: 1239px) {
@@ -965,15 +557,6 @@ section.hero .form-wrapper img.mobile {
     }
     main.main > section {
         padding: 2rem 1rem;
-    }
-    main.main > section.stats {
-        padding-bottom: 6rem;
-    }
-    main.main > section.youtube-stats {
-        padding-top: 0;
-    }
-    section.hero .title {
-        font-size: 3.5rem;
     }
     main.main > section.pink {
         padding-top: 8rem;
@@ -988,286 +571,72 @@ section.hero .form-wrapper img.mobile {
     section.pink .support > div:first-child {
         font-size: 2.25rem;
     }
-    main.main section.bonus {
-        padding: 3rem 1rem 4rem 1rem
-    }
     main.main section.youtube-stats {
         padding: 0 1rem 4rem;
     }
-    main.main > section.stats {
-        padding-bottom: 6rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-1.png"] {
-        height: 3.5rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-2.png"] {
-        height: 3rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-5.png"] {
-        height: 3.5rem;
-    }
-    section.hero .title .abs {
-        font-size: .8rem;
-    }
-    section.for .content {
-        gap: 1rem;
-    }
-    section.for .content .item {
-        padding: 1rem;
-    }
-    section.after .content > .item {
-        padding-top: 10rem;
-    }
-    section.after .content > .item.a {
-        background-size: auto 8rem;
-    }
-    section.after .content > .item.b {
-        background-size: auto 10rem;
-    }
-    section.after .content > .item.c {
-        background-size: auto 8rem;
-    }
-    section.after .content > .item.d {
-        background-size: auto 9rem;
-    }
-    section.after .content > .item.e {
-        background-size: auto 7rem;
-    }
-    main.main > section.stats {
+    main.main > section.youtube-stats {
         padding-top: 0;
     }
-    section.for {
-        background-position: 0 150%, 100% 0;
+    main.main > section.hero {
+        padding-bottom: 5rem;
     }
 }
 @media only screen and (min-width: 830px) and (max-width: 1023px) {
     html {
         font-size: 12px;
     }
-    section.for {
-        background-position: 0 160%, 100% 0;
-    }
 }
 @media only screen and (max-width: 829px) {
     html {
         font-size: 16px;
     }
-    main.main > section {
-        padding: 2rem 1rem;
-    }
-    main.main > section.youtube-stats {
-        padding-top: 0;
-    }
-    section.hero .title {
-        font-size: 2.25rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-1.png"] {
-        height: 2.25rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-2.png"] {
-        height: 1.75rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-5.png"] {
-        height: 2.25rem;
-    }
-    section.hero .title .abs {
-        font-size: .8rem;
-        transform: translateX(-50%);
-        left: 50%;
-        white-space: nowrap;
-    }
-    section.hero img.author-image {
-        width: 75%;
-        height: auto;
-        margin: auto;
-    }
-    main.main > section.stats {
-        padding-bottom: 6rem;
-    }
-    .form-wrapper {
-        margin-top: 4rem;
-    }
-    .inline-form {
-        flex-direction: column;
-        width: 75%;
-        margin: -4rem auto 0 auto;
-    }
-    .inline-form input {
-        width: 100%;
-        padding: 1rem;
-    }
-    .inline-form button {
-        width: 100%;
-    }
-    section.hero .wordmark {
-        margin-bottom: 2rem;
-        height: 1rem;
-    }
-    section.hero .form-wrapper .tooltip {
-        margin: 1rem auto 0 auto;
-        width: 75%;
-        text-align: center;
-    }
-    .form-note {
-        text-align: center;
-        font-size: 1rem;
-        transform: translateX(-50%);
-        left: 50%;
-    }
-    section.for .title {
-        font-size: 2.5rem;
-    }
-    section.for .content {
-        width: 80%;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-areas:
-            "a"
-            "b"
-            "c"
-            "d"
-            "e";
-    }
-    section.for .content .item .item-title {
-        font-size: 1.25rem;
-    }
-    section.for .content .item .description {
-        font-size: 1.15rem;
-    }
-    section.for .content .item img {
-        height: 4.5rem;
-        min-height: 4.5rem;
-    }
-    section.for .offer {
-        width: 80%;
-        flex-direction: column;
-        padding: 1rem;
-        position: relative;
-    }
-    section.for .offer p:first-of-type {
-        position: initial;
-    }
-    section.for .offer p br {
-        display: none;
-    }
-    section.for .offer .abs {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        height: auto;
-        transform: translate(-50%, -50%) rotate(10deg);
-        width: 3rem;
-    }
-    section.for .offer p {
-        font-size: 1.35rem;
-    }
-    section.for .offer a {
-        margin-top: 1rem;
-    }
-    section.after .title > div {
-        font-size: 2rem;
-    }
-    section.after .title .abs {
-        height: 4rem;
-        top: 0;
-    }
-    section.after .content {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-        grid-auto-columns: 1fr;
-        width: 75%;
-        max-width: 1400px;
-        margin: auto;
-        grid-template-areas:
-            "a"
-            "b"
-            "c"
-            "d"
-            "e";
-    }
-    section.stats .content {
-        padding: 1.5rem;
-    }
-    section.stats .content .title {
-        font-size: 1.75rem;
-    }
-    section.for {
-        background-position: 0 110%, 100% 0;
-    }
-    section.stats .content .inner .stats-container {
-        gap: 1rem;
-    }
-    section.stats .stats-container .text p:first-child {
-        font-size: 1.5rem;
-    }
-    section.stats .stats-container .text p:last-child {
-        font-size: 1rem;
-    }
-    section.stats .content .title > div:last-of-type .abs {
-        height: 1.5rem;
-        min-height: 1.5rem;
-        right: -1.5rem;
-    }
-    section.bonus .title > div {
-        font-size: 1.25rem;
-    }
-    section.youtube-stats .inner .title {
-        font-size: 1.75rem;
-        text-align: center;
-    }
-    section.youtube-stats .inner .title br {
-        display: none;
-    }
-    section.bonus .title > div:last-of-type .abs {
-        position: absolute;
-        right: -2.5rem;
-        height: 1.75rem;
-        top: 0;
-        width: fit-content;
-    }
-    section.bonus a {
-        margin-top: 2rem;
-    }
-    section.youtube-stats .inner .tooltip {
-        gap: 1rem;
-        flex-direction: column;
-    }
-    main.main > section.youtube-stats {
-        padding: 0 1rem 3rem 1rem;
-    }
-    section.youtube-stats .inner .tooltip .right {
-        text-align: center;
-    }
-    section.youtube-stats .inner > img {
-        width: 100%;
-    }
-    section.youtube-stats .bottom {
-        flex-direction: column;
-    }
-    section.youtube-stats .bottom .left .title {
-        font-size: 1.35rem;
-    }
-    section.youtube-stats .bottom .left .description {
-        font-size: 1rem;
-    }
-    section.youtube-stats .bottom .right {
-        align-items: center;
-    }
-    section.youtube-stats .bottom .right br {
-        display: none;
-    }
-    section.youtube-stats a {
-        width: 75%;
-        margin: auto;
-    }
-    section.hero .form-wrapper .abs.mobile {
+    br.mobile {
         display: block;
     }
-    section.youtube-stats .inner .tooltip .left {
-        font-size: 1.5rem;
+    br:not(.mobile) {
+        display: none;
     }
-    section.youtube-stats a, section.pink a:not(.support-link) {
+    main.main > section {
+        padding: 2rem 2rem;
+    }
+    section.hero .after {
+        gap: 0;
+    }
+    section.hero .after > div {
+        line-height: 135%;
+    }
+    section.hero .after > div:last-child .abs {
+        transform: initial;
+    }
+    section.hero .content {
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    section.hero .content .left {
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+    section.hero .content .left img {
+        width: 8rem;
+    }
+    section.hero .content .left p {
+        width: fit-content;
+    }
+    section.hero .title {
+        font-size: 3.5rem;
+    }
+    section.hero .title img {
+        width: 4rem;
+    }
+    section.hero .wordmark {
+        margin-bottom: 1rem;
+    }
+    section.hero {
+        background-position: top right, 0 20%, 7.5% 98%;
+        background-size: auto 24%, auto 30%, 4rem 4rem;
+    }
+    section.pink a:not(.support-link) {
         font-size: 2rem;
     }
     main.main > section.pink {
@@ -1285,16 +654,8 @@ section.hero .form-wrapper img.mobile {
     section.pink .content .grid > .item .text {
         font-size: .9rem;
     }
-    section.pink .content .grid > .item .text br,
-    section.hero .form-wrapper .abs:not(.mobile) {
+    section.pink .content .grid > .item .text br {
         display: none;
-    }
-    section.hero .form-wrapper form .abs {
-        top: -8.5rem;
-        right:-3rem;
-    }
-    section.hero .form-wrapper form .abs img {
-        height: 10rem;
     }
     section.pink .content .grid > .item:nth-child(2) .abs {
         right: -1.5rem;
@@ -1331,30 +692,81 @@ section.hero .form-wrapper img.mobile {
     section.pink .support > div:last-child {
         gap: .5rem;
     }
-    section.stats .content .inner {
-        padding-left: 0;
-        padding-right: 0;
+    main.main > section.youtube-stats {
+        padding-top: 0;
     }
-    section.for .offer {
-        background-image: none;
-        padding: 1.5rem;
-    }
-    section.for .offer img.mobile {
-        display: block;
-    }
-    section.for .offer p {
+    section.youtube-stats .inner .title {
+        font-size: 1.75rem;
         text-align: center;
+    }
+    section.youtube-stats .inner .title br {
+        display: none;
+    }
+    section.youtube-stats .inner .tooltip {
+        gap: 1rem;
+        flex-direction: column;
+    }
+    main.main > section.youtube-stats {
+        padding: 0 1rem 3rem 1rem;
+    }
+    section.youtube-stats .inner .tooltip .right {
+        text-align: center;
+    }
+    section.youtube-stats .inner > img {
+        width: 100%;
+    }
+    section.youtube-stats .bottom {
+        flex-direction: column;
+    }
+    section.youtube-stats .bottom .left .title {
+        font-size: 1.35rem;
+    }
+    section.youtube-stats .bottom .left .description {
+        font-size: 1rem;
+    }
+    section.youtube-stats .bottom .right {
+        align-items: center;
+    }
+    section.youtube-stats .bottom .right br {
+        display: none;
+    }
+    section.youtube-stats a {
+        width: 75%;
         margin: auto;
     }
-}
-@media only screen and (max-width: 700px) {
-    section.for {
-        background-position: 0 107%, 100% 0;
+    section.youtube-stats .inner .tooltip .left {
+        font-size: 1.5rem;
+    }
+    section.youtube-stats a, section.pink a:not(.support-link) {
+        font-size: 2rem;
+    }
+    section.hero .content .right {
+        flex-direction: column;
+    }
+    section.hero .content .right img {
+        width: 6rem;
+    }
+    main.main > section.hero {
+        padding-bottom: 4rem;
     }
 }
 @media only screen and (max-width: 600px) {
     html {
         font-size: 14px;
+    }
+    br.mobile {
+        display: block;
+    }
+    section.hero .content {
+        align-items: flex-start;
+    }
+    section.hero .content .left p,
+    section.hero .content .left p span,
+    section.hero .content .right p {
+        font-size: 1.4rem;
+    }
+    section.hero .content .right .list > div p {
+        font-size: 1.25rem;
     }
     section.pink .content .bottom .left > div:first-child p {
         font-size: 1.75rem;
@@ -1369,9 +781,6 @@ section.hero .form-wrapper img.mobile {
         "b"
         "c"
         "d";
-    }
-    section.for .offer img.mobile {
-        margin: -1rem auto;
     }
     section.pink .content .grid > .item {
         padding: 2rem;
@@ -1388,197 +797,11 @@ section.hero .form-wrapper img.mobile {
     section.pink .content .bottom .right {
         font-size: 1.1rem;
     }
-    section.after .content,
-    section.for .content,
-    section.for .offer {
-        width: 100%;
-    }
-    section.after .content > .item p,
-    section.for .offer p {
-        font-size: 1.2rem;
-    }
-    section.hero .form-wrapper form .abs {
-        top: -100%;
-        right: 0;
-    }
-    section.for .offer .abs {
-        top: 75%;
-    }
-    section.for .offer a {
-        font-size: 1.5rem;
-    }
-    section.for .title br:not(.mobile) {
-        display: none;
-    }
-    section.for .content .item .description {
-        font-size: 1.35rem;
-    }
-    section.hero .title {
-        font-size: 4rem;
-    }
-    section.hero .title > div img {
-        height: 4rem;
-    }
-    section.hero .form-wrapper > img:not(.mobile),
-    section.hero .title:not(.mobile) {
-        display: none;
-    }
-    .inline-form,
-    section.hero .form-wrapper .tooltip,
-    section.hero img.author-image {
-        width: 85%;
-    }
-    section.bonus .title > div {
-        font-size: 1.15rem;
-    }
-    section.youtube-stats .inner .tooltip .left {
-        font-size: 1.4rem;
-    }
-    section.youtube-stats .inner .tooltip .right {
-        font-size: 1.15rem;
-        text-align: left;
-    }
     section.pink .content .bottom {
         margin: 0;
     }
-    section.stats .content .title > div {
-        display: inline;
-    }
-    section.youtube-stats a {
-        width: 100%;
-    }
-    section.youtube-stats a, section.pink a:not(.support-link),
-    section.for .offer a {
+    section.pink a:not(.support-link) {
         padding: 1.25rem 2rem;
-    }
-    section.for .offer a {
-        width: 100%;
-    }
-    .inline-form button {
-        font-size: 1.5rem;
-        padding: 1.25rem 1rem;
-        height: auto;
-    }
-    .form-note {
-        margin-top: 2rem;
-        font-size: 1.1rem;
-    }
-    section.hero .form-wrapper .tooltip {
-        text-align: left;
-    }
-    section.hero .form-wrapper .tooltip > span {
-        font-size: 1.25rem;
-    }
-    section.youtube-stats .bottom .left .title {
-        font-size: 1.75rem;
-    }
-    section.youtube-stats .bottom .left .title br {
-        display: none;
-    }
-    section.hero .form-wrapper .tooltip > span:first-child {
-        padding-bottom: 10px;
-    }
-    section.bonus {
-        transform: skewY(-2deg);
-        background-color: #6C53E7;
-        background-image: url("assets/images/bonus-bg-mobile.png"), url("assets/images/bonus-bg-2.png");
-        background-repeat: no-repeat;
-        background-size: auto 50%, 25% auto;
-        background-position: 100% 0, 75% 0;
-        padding: 6rem 4rem 8rem 4rem;
-    }
-    section.bonus .title > div {
-        display: inline-block;
-        font-size: 2.75rem;
-    }
-    section.hero .title.mobile,
-    section.hero .form-wrapper img.mobile {
-        display: block;
-    }
-    section.hero .form-wrapper img.mobile {
-        width: 90%;
-        margin: auto;
-    }
-    section.hero .form-wrapper form .abs p {
-        font-size: 1rem;
-    }
-    .inline-form input {
-        font-size: 1.2rem;
-        padding: 1.25rem 1rem;
-    }
-    section.for .title {
-        font-size: 3rem;
-    }
-    section.for .content .item .item-title {
-        font-size: 1.5rem;
-    }
-    main.main > section.for {
-        background-size: 300% auto, 60% auto;
-        background-position: 0 115%, 100% 0;
-        padding-bottom: 12rem;
-    }
-    section.youtube-stats .inner .tooltip {
-        align-items: flex-start;
-    }
-    section.youtube-stats .inner .title {
-        font-size: 2.25rem;
-        text-align: left;
-    }
-    br.mobile {
-        display: block;
-    }
-    section.after .title > div {
-        font-size: 2.5rem;
-        display: inline;
-    }
-    section.after .content > .item {
-        padding: 12rem 2rem 2rem 2rem;
-    }
-    section.stats .content .title {
-        font-size: 2.25rem;
-        padding-right: 2.5rem;
-        position: relative;
-    }
-    section.stats .content .title > div:last-of-type .abs {
-        height: 3.5rem;
-        min-height: 3.5rem;
-        right: 0;
-        top: 50%;
-    }
-    section.stats .content .title > div:last-of-type {
-        position: initial;
-    }
-    section.stats .content .offer-text {
-        font-size: 1.25rem;
-    }
-    section.stats .content .offer-text br:not(.mobile) {
-        display: none;
-    }
-    main.main > section.stats {
-        padding-bottom: 5rem;
-    }
-    main.main > section.bonus {
-        padding-top: 7rem;
-        padding-bottom: 7rem;
-    }
-    section.bonus a {
-        font-size: 2rem;
-    }
-    section.youtube-stats .bottom .left {
-        background-position: 95% 100%;
-    }
-    section.youtube-stats .bottom .left .description {
-        font-family: 'Inter', sans-serif;
-        padding-left: 0;
-        padding-right: 2rem;
-        font-size: 1.1rem;
-        text-transform: initial;
-        font-weight: 500;
-        background-size: auto 3.5rem;
-    }
-    main.main > section.pink {
-        padding-top: 11rem;
-        background-size: 300% auto;
     }
     section.pink .title > div {
         font-size: 3rem;
@@ -1622,36 +845,61 @@ section.hero .form-wrapper img.mobile {
     section.pink .support .mobile {
         margin: 0;
     }
-}
-@media only screen and (max-width: 480px) {
-    .inline-form, section.hero .form-wrapper .tooltip,section.hero img.author-image {
+    section.youtube-stats .inner .tooltip .left {
+        font-size: 1.4rem;
+    }
+    section.youtube-stats .inner .tooltip .right {
+        font-size: 1.15rem;
+        text-align: left;
+    }
+    section.youtube-stats a {
         width: 100%;
     }
-    section.hero img.author-image {
-        width: 90%;
-        margin: 0;
+    section.youtube-stats a, section.pink a:not(.support-link) {
+        padding: 1.25rem 2rem;
     }
-    section.hero .form-wrapper form .abs {
-        top: -80%;
-        right: 0;
+    section.youtube-stats .bottom .left .title {
+        font-size: 1.75rem;
     }
-    section.stats .content .inner .stats-container > div:first-child {
-        height: 7.5rem;
+    section.youtube-stats .bottom .left .title br {
+        display: none;
     }
-    section.stats .content .inner .stats-container > div:nth-child(2) {
-        height: 15rem;
+    section.youtube-stats .inner .tooltip {
+        align-items: flex-start;
     }
-    section.stats .content .inner .stats-container > div:last-child {
-        height: 20rem;
+    section.youtube-stats .inner .title {
+        font-size: 2.25rem;
+        text-align: left;
     }
-    .inline-form {
-        padding: 1rem 1.25rem 3.5rem 1.25rem;
+    section.youtube-stats .bottom .left {
+        background-position: 95% 100%;
     }
+    section.youtube-stats .bottom .left .description {
+        font-family: 'Inter', sans-serif;
+        padding-left: 0;
+        padding-right: 2rem;
+        font-size: 1.1rem;
+        text-transform: initial;
+        font-weight: 500;
+        background-size: auto 3.5rem;
+    }
+}
+@media only screen and (max-width: 480px) {
     html {
         font-size: 13px;
     }
-    section.stats .content .inner .stats-container > div {
+    main.main > section {
         padding: 2rem 1rem;
+    }
+    section.hero .content .right img {
+        width: 6.5rem;
+    }
+    section.hero .content {
+        margin-top: -1.5rem;
+    }
+    section.hero a {
+        padding: 1rem;
+        width: 100%;
     }
     section.pink .content .bottom .left,
     section.pink a:not(.support-link),
@@ -1659,39 +907,8 @@ section.hero .form-wrapper img.mobile {
         padding-left: 10px;
         padding-right: 10px;
     }
-    section.hero .title .abs br:not(.mobile) {
-        display: none;
-    }
-    section.hero .title .abs br.mobile {
-        display: block;
-    }
-    section.hero .title .abs {
-        font-size: 1.1rem;
-        bottom: -4.5rem;
-        line-height: 130%;
-    }
-    section.hero .title .abs img {
-        height: 2.6rem;
-        min-height: 2.6rem;
-    }
-    .inline-form button {
-        font-size: 1.25rem;
-    }
-    section.hero .title {
-        font-size: 3.25rem;
-    }
-    section.hero .title > div img {
-        height: 3.25rem;
-    }
-    section.hero .title > div img[src*='icon-1.png'] {
-        height: 3.5rem;
-    }
-    section.hero .title > div img[src="assets/images/icon-2.png"] {
-        height: 4rem;
-    }
-    main.main > section.bonus {
-        padding-left: 5px;
-        padding-right: 5px;
+    section.pink a:not(.support-link) {
+        font-size: 2rem;
     }
     section.youtube-stats .bottom .left .description br {
         display: none;
@@ -1706,61 +923,14 @@ section.hero .form-wrapper img.mobile {
     section.youtube-stats a, section.pink a:not(.support-link) {
         font-size: 2rem;
     }
-    section.for {
-        background-position: 0 105%, 100% 0;
+    section.hero .title {
+        font-size: 3rem;
     }
 }
 @media only screen and (max-width: 420px) {
-    section.stats .stats-container .text p:first-child {
-        font-size: 1.25rem;
-    }
-    section.stats .content .inner .stats-container {
-        gap: .5rem;
-    }
-    section.stats .content .offer-text br {
-        display: none;
-    }
-    section.bonus .title > div {
-        font-size: 2.5rem;
-    }
-    section.after .title .abs {
-        height: 4rem;
-        top: 8rem;
-    }
-    section.hero .form-wrapper form .abs {
-        gap: 0;
-    }
-    section.hero .title {
-        font-size: 3rem;
-        gap: .5rem;
-    }
-    section.hero .form-wrapper .tooltip {
-        padding-right: 2rem;
-    }
-    section.hero .title .abs {
-        font-size: .9rem;
-    }
-    section.hero .title .abs img {
-        height: 3.2rem;
-        min-height: 3.2rem;
-    }
-    section.for .offer p {
-        font-size: 1.25rem;
-    }
-    section.stats .content {
-        padding: 1.5rem 1rem;
-    }
-    main.main > section.youtube-stats {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
     main.main > section {
         padding-left: 10px;
         padding-right: 10px;
-    }
-    main.main > section.bonus {
-        padding-top: 9rem;
-        padding-bottom: 9rem;
     }
     section.pink .content .bottom .left > div:first-child {
         gap: .5rem;
@@ -1771,20 +941,20 @@ section.hero .form-wrapper img.mobile {
     section.pink .content .bottom .left > div:last-child {
         font-size: 1rem;
     }
-    section.stats .content .title {
-        font-size: 2rem;
+    main.main > section.youtube-stats {
+        padding-left: 10px;
+        padding-right: 10px;
     }
     section.youtube-stats .inner .tooltip .left {
         font-size: 1.25rem;
     }
-    section.after .content > .item p, section.for .offer p {
+    section.hero .content .left p,
+    section.hero .content .left p span,
+    section.hero .content .right p {
         font-size: 1.3rem;
     }
-    section.hero .form-wrapper form .abs {
-        top: -70%;
-    }
-    section.hero .form-wrapper form .abs img {
-        height: 8rem;
+    section.hero .content .right .list > div p {
+        font-size: 1.15rem;
     }
 }
 @media only screen and (max-width: 380px) {
@@ -1793,9 +963,6 @@ section.hero .form-wrapper img.mobile {
     }
     section.pink .content .bottom .left > div:first-child p {
         font-size: 1.65rem;
-    }
-    section.hero .title {
-        font-size: 2.75rem;
     }
     section.youtube-stats .inner .tooltip .left {
         font-size: 1.2rem;

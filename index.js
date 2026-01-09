@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", function () {
             fbq("track", "Lead", {}, { eventID: eid });
         }
 
-        const baseUrl = "https://google.com/";
-        const startParam = "";
+        const baseUrl = "https://t.me/rozumai_bot";
+        const startParam = "695e61fc25b882fa3f057d4a";
 
         const getUTM = key => encodeURIComponent(localStorage.getItem(key) || "");
 
