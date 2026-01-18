@@ -24,7 +24,30 @@
 .ff-kosko {font-family: 'Kosko Bold', sans-serif;}
 html {
     font-size: 20px;
-    background: #004739;
+    background:
+        /* light green glow on the right */
+            radial-gradient(
+                    120% 120% at 85% 50%,
+                    #0f6b56 0%,
+                    rgba(15, 107, 86, 0.4) 35%,
+                    transparent 65%
+            ),
+
+                /* diagonal dark shadow from top-left */
+            linear-gradient(
+                    135deg,
+                    rgba(0, 0, 0, 0.45) 0%,
+                    rgba(0, 0, 0, 0.15) 40%,
+                    transparent 70%
+            ),
+
+                /* base gradient */
+            linear-gradient(
+                    90deg,
+                    #063f35 0%,
+                    #075246 45%,
+                    #0b6a57 100%
+            );
     scroll-behavior: smooth;
     color: #FFFFFF;
 }
@@ -38,13 +61,30 @@ html {
     border: none;
     font-family: 'Inter', sans-serif;
 }
+main > .wrapper {
+    background-image:
+            radial-gradient(
+                    circle at 15% 50%,
+                    #ff5a1f 0%,
+                    rgba(255, 90, 31, 0.85) 20%,
+                    rgba(255, 122, 41, 0.45) 40%,
+                    rgba(255, 160, 60, 0.15) 60%,
+                    rgba(255, 186, 100, 0) 75%
+            ),
+            linear-gradient(
+                    90deg,
+                    #ff6a1f 0%,
+                    #fd8a24 40%,
+                    rgba(255, 163, 37, 0.87) 70%,
+                    rgb(251, 185, 57) 100%
+            );
+}
 section.hero,
 section.for {
-    background-color: #FC6121;
-    background-image: url("images/hero-bg.png");
+    background-image:
+        url("images/hero-bg.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
     padding: 2rem 4rem 4rem 4rem;
     display: flex;
@@ -285,7 +325,6 @@ section.author {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    background: #FC6121;
 }
 section.author .content {
     display: flex;
@@ -506,7 +545,7 @@ section.tariffs > .after {
     background-image: url("images/after-bg.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto 100%;
+    background-size: 100% 100%;
 }
 section.tariffs > .after > p {
     font-size: 2rem;
@@ -935,6 +974,9 @@ section.tariffs > .after > p {
     section.tariffs .content .right,
     section.tariffs .content .left {
         padding: 1.5rem;
+    }
+    section.lessons .lesson .left .text, section.lessons .lesson .left .num {
+        font-size: 1.5rem;
     }
 }
 @media only screen and (max-width: 420px) {
