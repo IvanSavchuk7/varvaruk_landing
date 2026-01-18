@@ -65,7 +65,9 @@ section.hero header > img {
     height: 25px;
     width: auto;
 }
-section.hero header a {
+section.hero header a,
+section.tariffs .content a,
+section.tariffs .after a {
     text-decoration: none;
     color: #004739;
     display: flex;
@@ -76,9 +78,23 @@ section.hero header a {
     padding: 1rem 2rem;
     background: #FFF;
     box-shadow: 0 0 12px 0 rgba(255, 255, 255, 0.58) inset;
+    justify-content: center;
 }
-section.hero header a img {
+section.tariffs .after a {
+    border-radius: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.40);
+    width: fit-content;
+    background: transparent;
+    box-shadow: none;
+    color: #FFFFFF;
+}
+section.hero header a img,
+section.tariffs .after a img {
     height: 1.2rem;
+    width: auto;
+}
+section.tariffs .content a img {
+    height: 1rem;
     width: auto;
 }
 section.hero .content {
@@ -181,7 +197,8 @@ section.for .title {
     display: flex;
     flex-direction: column;
 }
-section.for .title > div {
+section.for .title > div,
+section.lessons .title > div {
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -191,11 +208,18 @@ section.for .title > div:first-of-type img {
     height: auto;
 }
 section.for .title span,
-section.for .title > div {
+section.for .title > div,
+section.author .title,
+section.lessons .title span,
+section.tariffs .title {
     font-size: 2.5rem;
 }
 section.for .title > div:last-of-type img {
     height: 4rem;
+    width: auto;
+}
+section.lessons .title > div img {
+    height: 3rem;
     width: auto;
 }
 section.for .content {
@@ -269,14 +293,14 @@ section.author .content {
 }
 section.author .content > div {
     flex: 1;
-    min-height: 600px;
-    padding: 2rem;
+    padding: 3rem 2.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     border-radius: 48px;
     background-color: #004739;
     position: relative;
+    aspect-ratio: 22 / 25;
 }
 section.author .content > div:first-of-type {
     background-image: url("images/bg-1.png");
@@ -284,16 +308,219 @@ section.author .content > div:first-of-type {
     background-size: 100% 100%;
     background-position: center center;
 }
+section.author .content > div:last-of-type {
+    background-image: url("images/bg-2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+section.author .content > div .name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 140%;
+}
+section.author .content > div ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 1rem;
+}
+section.author .content > div ul li {
+    font-size: .8rem;
+}
+section.author .content > div .abs {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    width: 70%;
+    border-bottom-right-radius: 48px;
+    pointer-events: none;
+}
+section.author .title {
+    text-align: center;
+}
+section.lessons {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+section.lessons  > .after {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 58.294px;
+    background: #00271F;
+    width: fit-content;
+}
+section.lessons > .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section.lessons > .content > div {
+    display: flex;
+    gap: 1.5rem;
+}
+section.lessons .lesson .left {
+    flex: 1;
+    border-radius: 52px;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.lessons .lesson .left .num {
+    color: #34AD6A;
+    font-size: 1.2rem;
+}
+section.lessons .lesson .left .text {
 
-
-
+    font-size: 1.25rem;
+}
+section.lessons .lesson .right {
+    flex: 3.25;
+    border-radius: 52px;
+    background: #6C53E7;
+    box-shadow: 0 0 100.1px 0 rgba(255, 255, 255, 0.58) inset;
+    padding: 3.5rem 4rem;
+}
+section.lessons .lesson .right ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.lessons .lesson .right ul li {
+    font-size: 1.2rem;
+}
+section.lessons .lesson:first-child .left {
+    background-image: url("images/lesson-bg-1.png");
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    background-position: bottom right;
+}
+section.lessons .lesson:nth-child(2) .left {
+    background-image: url("images/lesson-bg-2.png"), url("images/lesson-bg-4.png");
+    background-repeat: no-repeat;
+    background-size: 3rem auto, 10rem auto;
+    background-position: -1rem 50%, bottom right;
+}
+section.lessons .lesson:last-child .left {
+    background-image: url("images/lesson-bg-3.png");
+    background-repeat: no-repeat;
+    background-size: 10rem auto;
+    background-position: 40% calc(100% + 2.5rem);
+}
+section.tariffs {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+section.tariffs .content {
+    display: flex;
+    gap: 2rem;
+}
+section.tariffs .content .left {
+    flex: 1.2;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 52px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section.tariffs .content .right {
+    flex: 3;
+    background: #FC6121;
+    border-radius: 52px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section.tariffs .content .left .name {
+    font-size: 2.25rem;
+}
+section.tariffs .content .left .tooltip {
+    font-size: 1.5rem;
+}
+section.tariffs .content .list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+section.tariffs .content .list > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+section.tariffs .content .list > div img {
+    width: .9rem;
+    height: auto;
+    min-width: .9rem;
+}
+section.tariffs .content .left .list > div:not(:first-child) img {
+    opacity: .25;
+}
+section.tariffs .content .list > div p {
+    opacity: .7;
+    line-height: 120%;
+}
+section.tariffs .content .left .list > div:not(:first-child) p {
+    text-decoration: line-through;
+}
+section.tariffs .content .right .name {
+    font-size: 2.75rem;
+}
+section.tariffs .content .right {
+    justify-content: space-between;
+}
+section.tariffs .content .inner {
+    padding: 1.5rem;
+    border-radius: 42px;
+    background: #025444;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.58) inset;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.tariffs .content .inner .price {
+    display: flex;
+    justify-content: space-between;
+}
+section.tariffs .content .inner .price p:first-child {
+    font-size: 1.25rem;
+}
+section.tariffs .content .inner .price p:last-child {
+    font-size: 1.75rem;
+}
+section.tariffs > .after {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 52px;
+    background-color: #004739;
+    background-image: url("images/after-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+}
+section.tariffs > .after > p {
+    font-size: 2rem;
+}
 
 @media screen and (min-width: 2560px) and (max-width: 3840px) {
     html {
         font-size: 24px;
     }
     section.hero,
-    section.for {
+    section.for,
+    section.author,
+    section.lessons,
+    section.tariffs {
         padding: 3rem 15% 3rem 15%;
     }
 }
@@ -301,20 +528,31 @@ section.author .content > div:first-of-type {
     html {
         font-size: 22px;
     }
-    section.hero,section.for {
+    section.hero,section.for, section.author, section.lessons, section.tariffs {
         padding: 3rem 10% 5rem 10%;
     }
 }
-@media only screen and (min-width: 1441px) and (max-width: 1920px) {
+@media only screen and (min-width: 1441px) and (max-width: 1600px) {
+    section.lessons .lesson .right {
+        padding: 3rem 3.5rem;
+    }
+    section.lessons .lesson .right ul li {
+        font-size: 1.1rem;
+    }
+    section.tariffs .content .left {
+        padding: 1.5rem;
+    }
 }
 @media only screen and (min-width: 1240px) and (max-width: 1600px) {
-
+    section.author .content > div .abs {
+        width: 65%;
+    }
 }
 @media only screen and (min-width: 1240px) and (max-width: 1440px) {
     html {
         font-size: 18px;
     }
-    section.hero,section.for {
+    section.hero,section.for,section.author, section.lessons, section.tariffs {
         padding: 2rem 3rem;
     }
     section.for .content > div {
@@ -328,12 +566,48 @@ section.author .content > div:first-of-type {
     section.for .content {
         gap: 1.25rem;
     }
+    section.author .content > div {
+        padding: 2.5rem 2rem;
+    }
+    section.author .content {
+        gap: 2rem;
+    }
+    section.lessons .lesson .right {
+        padding: 3rem 3.5rem;
+    }
+    section.lessons .lesson .right ul li {
+        font-size: 1.1rem;
+    }
+    section.lessons .lesson .right ul li br {
+        display: none;
+    }
+    section.lessons .lesson .left .text {
+        font-size: 1.1rem;
+    }
+    section.lessons .lesson .left,
+    section.lessons .lesson .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 36px;
+    }
+    section.tariffs .content .left,
+    section.tariffs .content .right {
+        padding: 1.5rem;
+    }
+    section.tariffs .content .list > div p {
+        font-size: .9rem;
+    }
+    section.tariffs > .after > p {
+        font-size: 1.9rem;
+    }
 }
 @media only screen and (min-width: 1024px) and (max-width: 1239px) {
     html {
         font-size: 14px;
     }
-    section.hero,section.for {
+    section.hero,section.for, section.author, section.lessons, section.tariffs {
         padding: 2rem;
     }
     section.for .content > div {
@@ -341,15 +615,33 @@ section.author .content > div:first-of-type {
         gap: .75rem;
         border-radius: 36px;
     }
-    section.for .content {
+    section.for .content,
+    section.author .content {
         gap: 1rem;
+    }
+    section.author .content > div {
+        padding: 2rem 1.5rem;
+    }
+    section.lessons .lesson .left .text br {
+        display: none;
+    }
+    section.lessons .lesson .left,
+    section.lessons .lesson .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 36px;
+    }
+    section.tariffs .content {
+        gap: 1.5rem;
     }
 }
 @media only screen and (min-width: 830px) and (max-width: 1023px) {
     html {
         font-size: 14px;
     }
-    section.hero,section.for {
+    section.hero,section.for,section.author, section.lessons, section.tariffs {
         padding: 2rem 1rem;
     }
     section.hero .content {
@@ -372,12 +664,57 @@ section.author .content > div:first-of-type {
     section.for .content > div .title {
         font-size: 1.25rem;
     }
+    section.author .content,
+    section.tariffs .content {
+        gap: 1rem;
+    }
+    section.author .content > div {
+        padding: 1.5rem;
+        border-radius: 24px;
+    }
+    section.author .content > div .abs {
+        border-radius: 24px;
+    }
+    section.author .content > div ul {
+        gap: 5px;
+    }
+    section.lessons .lesson .right {
+        padding: 2.5rem;
+    }
+    section.lessons .lesson .left,
+    section.lessons .lesson .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 24px;
+    }
+    section.lessons .lesson .right ul li br,
+    section.lessons .lesson .left .text br,
+    section.tariffs > .after > p br,
+    section.tariffs .content .list > div p br {
+        display: none;
+    }
+    section.lessons > .content,
+    section.lessons > .content > div {
+        gap: 1rem;
+    }
+    section.tariffs .content .left,
+    section.tariffs .content .right {
+        padding: 1.25rem;
+    }
+    section.tariffs .content .list > div p {
+        font-size: .9rem;
+    }
+    section.lessons {
+        padding-top: 4rem;
+    }
 }
 @media only screen and (max-width: 829px) {
     html {
         font-size: 16px;
     }
-    section.hero,section.for {
+    section.hero,section.for,section.author,section.lessons, section.tariffs {
         padding: 1.5rem 1rem;
     }
     section.hero .content .right {
@@ -452,6 +789,77 @@ section.author .content > div:first-of-type {
     section.for .content > div .title {
         line-height: 145%;
     }
+    section.author .title {
+        font-size: 3.5rem;
+    }
+    section.author .content {
+        flex-direction: column;
+    }
+    section.author .content > div .name {
+        font-size: 2.2rem;
+    }
+    section.author .content > div ul li {
+        font-size: 1.2rem;
+    }
+    section.author .content > div {
+        border-radius: 28px;
+        padding: 1.5rem;
+    }
+    section.author .content > div .abs {
+        width: 60%;
+        border-radius: 28px;
+    }
+    section.lessons > .content {
+        gap: 3rem;
+    }
+    section.lessons > .content > div {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    section.lessons > .content > div .left,
+    section.lessons > .content > div .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 36px;
+    }
+    section.lessons > .content > div br:not(.mobile) {
+        display: none;
+    }
+    section.lessons > .content > div .left {
+        padding: 2.5rem;
+    }
+    section.lessons .lesson .right ul li {
+        line-height: 125%;
+    }
+    section.lessons .lesson .left .text,
+    section.lessons .lesson .left .num {
+        font-size: 1.35rem;
+    }
+    section.lessons .lesson:first-child .left {
+        background-size: 15rem auto;
+        background-position: calc(100% + 5rem) calc(100% + 6rem);
+    }
+    section.lessons .lesson:nth-child(2) .left {
+        background-size: 5rem auto, 10rem auto;
+        background-position: 10% calc(100% + 3rem), 100% calc(100% + 3rem);
+    }
+    section.lessons .lesson:last-child .left {
+        background-image: url("images/lesson-bg-3.png");
+        background-repeat: no-repeat;
+        background-size: 10rem auto;
+        background-position: calc(100% + 1.5rem) -1rem;
+    }
+    section.tariffs .content {
+        flex-direction: column;
+    }
+    section.tariffs .content br {
+        display: none;
+    }
+    section.tariffs .content a {
+        font-size: 1.5rem;
+    }
 }
 @media only screen and (max-width: 600px) {
     html {
@@ -474,16 +882,59 @@ section.author .content > div:first-of-type {
         width: 100%;
         border-radius: 24px;
     }
+    section.author .content > div .abs {
+        width: 50%;
+    }
+    section.author .content > div .name br:not(.mobile) {
+        display: none;
+    }
+    section.author .content > div {
+        aspect-ratio: 22 / 21;
+    }
+    section.tariffs > .after > p br {
+        display: none;
+    }
+    section.tariffs > .after > p {
+        font-size: 1.75rem;
+    }
 }
 @media only screen and (max-width: 480px) {
     html {
         font-size: 13px;
     }
-    section.hero, section.for {
+    section.hero, section.for,section.author, section.lessons, section.tariffs {
         padding: 2rem 10px 4rem 10px;
     }
     section.hero header > img {
         height: 20px;
+    }
+    section.author .content > div {
+        overflow: hidden;
+    }
+    section.author .content > div .abs {
+        width: 75%;
+        bottom: -20%;
+        right: -3%;
+    }
+    section.author .content > div br:not(.mobile) {
+        display: none;
+    }
+    section.author .content > div ul {
+        gap: 7px;
+    }
+    section.lessons .lesson .right {
+        padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    }
+    section.lessons > .content > div .left, section.lessons > .content > div .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 26px;
+    }
+    section.tariffs .content .right,
+    section.tariffs .content .left {
+        padding: 1.5rem;
     }
 }
 @media only screen and (max-width: 420px) {
@@ -494,6 +945,9 @@ section.author .content > div:first-of-type {
 @media only screen and (max-width: 380px) {
     html {
         font-size: 11.5px;
+    }
+    section.author .content > div ul {
+        gap: 5px;
     }
 }
 @media only screen and (max-width: 366px) {
