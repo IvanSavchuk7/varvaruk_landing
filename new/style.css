@@ -983,6 +983,9 @@ section.tariffs > .after > p {
     html {
         font-size: 12px;
     }
+    section.hero, section.for,section.author, section.lessons, section.tariffs {
+        padding: 2rem 5px 4rem 5px;
+    }
 }
 @media only screen and (max-width: 380px) {
     html {
