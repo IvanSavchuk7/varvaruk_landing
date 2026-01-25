@@ -218,7 +218,6 @@ section.hero .left > .bottom .left div:not(:last-child) {
 }
 section.hero .left .bottom img:not(.abs) {
     height: .9rem;
-    width: fit-content;
     max-width: 100%;
     object-fit: contain;
     align-self: flex-start;
@@ -264,7 +263,7 @@ section.hero .left .bottom > .left .gift img:last-of-type {
 section.hero a.offer-link,
 section.for a.offer-link,
 section.author a.offer-link {
-    margin-top: -2rem;
+    margin: -2rem auto 0 auto;
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -300,6 +299,10 @@ section.author a.offer-link {
     box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.58) inset;
     width: fit-content;
 }
+section.hero a.offer-link {
+    margin-left: 0;
+    margin-right: 0;
+}
 section.for a.offer-link,
 section.author a.offer-link {
     margin-top: 1rem;
@@ -313,15 +316,15 @@ section.for > .title {
     display: flex;
     flex-direction: column;
 }
+section.for .title > div:first-of-type img {
+    width: 2.5rem;
+    height: auto;
+}
 section.for .title > div,
 section.lessons .title > div {
     display: flex;
     align-items: center;
     gap: .5rem;
-}
-section.for .title > div:first-of-type img {
-    width: 2.5rem;
-    height: auto;
 }
 section.for .title span,
 section.for .title > div,
@@ -1255,5 +1258,4 @@ section.tariffs .content a {
     html {
         font-size: 10.5px;
     }
-
 }
