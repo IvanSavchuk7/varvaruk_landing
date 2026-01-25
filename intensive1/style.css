@@ -1204,7 +1204,7 @@ section.tariffs .content a {
         font-size: 1.5rem;
     }
     section.hero .list > div p {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     section.hero a.offer-link {
         margin-top: 0;
@@ -1255,4 +1255,5 @@ section.tariffs .content a {
     html {
         font-size: 10.5px;
     }
+
 }
