@@ -1309,6 +1309,12 @@ section.tariffs .content a {
     section.tariffs .content .inner .price p:first-child {
         font-size: 1.5rem;
     }
+    section.hero a.offer-link {
+        margin-top: -2rem;
+    }
+    section.hero .left .bottom > .left .date, section.hero .left .bottom > .left .format {
+        min-width: 10vw;
+    }
 }
 @media only screen and (max-width: 420px) {
     html {
