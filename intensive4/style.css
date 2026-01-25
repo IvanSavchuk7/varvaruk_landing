@@ -1,0 +1,1296 @@
+@font-face {
+    font-family: 'Kharkiv Tone';
+    src: local('Kharkiv Tone'), local('Kharkiv Tone'),
+    url('../assets/Kharkiv_Tone.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Kosko Bold';
+    src: local('Kosko Bold'), local('Kosko Bold'),
+    url('../assets/Kosko_Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+.color-lightblue {color: #B2DDF2;}
+.color-pink {color: #FF96B7;}
+.color-lightred {color: #FC6121;}
+.color-black { color: #000000;}
+.bg-orange { background: #FF8A5E;}
+.bg-lightred {background: #FC6121;}
+.ff-kharkiv {font-family: 'Kharkiv Tone', sans-serif;}
+.ff-kosko {font-family: 'Kosko Bold', sans-serif;}
+html {
+    font-size: 20px;
+    background:
+        /* light green glow on the right */
+            radial-gradient(
+                    120% 120% at 85% 50%,
+                    #0f6b56 0%,
+                    rgba(15, 107, 86, 0.4) 35%,
+                    transparent 65%
+            ),
+
+                /* diagonal dark shadow from top-left */
+            linear-gradient(
+                    135deg,
+                    rgba(0, 0, 0, 0.45) 0%,
+                    rgba(0, 0, 0, 0.15) 40%,
+                    transparent 70%
+            ),
+
+                /* base gradient */
+            linear-gradient(
+                    90deg,
+                    #063f35 0%,
+                    #075246 45%,
+                    #0b6a57 100%
+            );
+    scroll-behavior: smooth;
+    color: #FFFFFF;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0;
+    line-height: 104%;
+    text-decoration: none;
+    border: none;
+    font-family: 'Inter', sans-serif;
+}
+main > .wrapper {
+    background-image:
+            radial-gradient(
+                    circle at 15% 50%,
+                    #ff5a1f 0%,
+                    rgba(255, 90, 31, 0.85) 20%,
+                    rgba(255, 122, 41, 0.45) 40%,
+                    rgba(255, 160, 60, 0.15) 60%,
+                    rgba(255, 186, 100, 0) 75%
+            ),
+            linear-gradient(
+                    90deg,
+                    #ff6a1f 0%,
+                    #fd8a24 40%,
+                    rgba(255, 163, 37, 0.87) 70%,
+                    rgb(251, 185, 57) 100%
+            );
+}
+section.hero,
+section.for {
+    background-image:
+        url("../intensive1/images/hero-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem 4rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+section.hero header {
+    width: 100%;
+}
+section.hero header > img {
+    height: 35px;
+    width: auto;
+}
+section.hero header a,
+section.tariffs .content a,
+section.tariffs .after a {
+    text-decoration: none;
+    color: #004739;
+    display: flex;
+    gap: .5rem;
+    font-size: 1.2rem;
+    align-items: center;
+    border-radius: 64px;
+    padding: 1rem 2rem;
+    background: #FFF;
+    box-shadow: 0 0 12px 0 rgba(255, 255, 255, 0.58) inset;
+    justify-content: center;
+}
+section.tariffs .after a {
+    border-radius: 28px;
+    border: 2px solid rgba(255, 255, 255, 0.40);
+    width: fit-content;
+    background: transparent;
+    box-shadow: none;
+    color: #FFFFFF;
+}
+section.hero header a img,
+section.tariffs .after a img {
+    height: 1.2rem;
+    width: auto;
+}
+section.tariffs .content a img {
+    height: 1rem;
+    width: auto;
+}
+section.hero .content {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+section.hero .content > .left {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.hero .content > .right {
+    flex: 1.5;
+    position: relative;
+}
+section.hero img.abs {
+    position: absolute;
+    bottom: .5rem;
+    left: -2.5rem;
+    height: 5rem;
+    width: 5rem;
+    z-index: 5;
+
+}
+section.hero .content .right img:not(.abs) {
+    height: auto;
+    width: 100%;
+    z-index: 100;
+    position: relative;
+    aspect-ratio: 5 / 8;
+}
+section.hero a.offer-link,
+section.for a.offer-link,
+section.author a.offer-link {
+    margin: -2rem auto 0 auto;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    gap: .5rem;
+    color: #fff;
+    background:
+        /* light green glow on the right */
+            radial-gradient(
+                    120% 120% at 85% 50%,
+                    #0f6b56 0%,
+                    rgba(15, 107, 86, 0.4) 35%,
+                    transparent 65%
+            ),
+
+                /* diagonal dark shadow from top-left */
+            linear-gradient(
+                    135deg,
+                    rgba(0, 0, 0, 0.45) 0%,
+                    rgba(0, 0, 0, 0.15) 40%,
+                    transparent 70%
+            ),
+
+                /* base gradient */
+            linear-gradient(
+                    90deg,
+                    #063f35 0%,
+                    #075246 45%,
+                    #0b6a57 100%
+            );
+    border-radius: 100px;
+    box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.58) inset;
+    width: fit-content;
+}
+section.hero a.offer-link {
+    margin-left: 0;
+}
+section.for a.offer-link,
+section.author a.offer-link {
+    margin-top: 1rem;
+}
+section.hero a.offer-link img,
+section.for a.offer-link img,
+section.author a.offer-link img {
+    height: 1.25rem;
+}
+section.hero .left .top {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.hero .text-top {
+    padding: 1rem 2rem;
+    font-size: 2.5rem;
+    border-radius: 71.028px;
+    background: #D23C17;
+    width: fit-content;
+}
+section.hero .text-bottom {
+    font-size: 4rem;
+}
+section.hero .tooltip {
+    font-size: 1.2rem;
+    line-height: 125%;
+}
+section.hero .left .bottom {
+    display: flex;
+    gap: 4rem;
+}
+section.hero .left .bottom img:not(.abs) {
+    height: 2.2rem;
+    width: fit-content;
+    object-fit: contain;
+    align-self: flex-start;
+}
+section.hero .bottom div.mobile {
+    display: none;
+}
+section.hero .left .bottom > .left .text {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .8rem 1.25rem;
+    background: #D23C17;
+    border-radius: 71.028px;
+}
+section.hero .left .bottom img:not(.abs) {
+    height: .9rem;
+    max-width: 100%;
+    object-fit: contain;
+    align-self: flex-start;
+}
+section.hero .left .bottom p:first-of-type {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 700;
+    font-size: .9rem;
+}
+section.hero .left .bottom p:last-of-type {
+    font-size: 1.25rem;
+}
+section.hero .bottom div.mobile {
+    display: none;
+}
+section.hero .left .bottom > .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-right: 3rem;
+}
+section.hero .left .bottom > .left .gift {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+section.hero .left .bottom > .left .gift p {
+    font-size: 1rem;
+    text-transform: initial;
+    color: #FFFFFF;
+}
+section.hero .left .bottom > .left .gift p img:first-of-type {
+    width: 1.25rem;
+    height: auto;
+    margin-top: .25rem;
+}
+section.hero .left .bottom > .left .gift img:last-of-type {
+    width: 8rem;
+    height: auto;
+    margin-top: -2rem;
+}
+section.for > .title {
+    display: flex;
+    flex-direction: column;
+}
+section.for .title > div:first-of-type img {
+    width: 2.5rem;
+    height: auto;
+}
+section.for .title > div,
+section.lessons .title > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+section.for .title span,
+section.for .title > div,
+section.author .title,
+section.lessons .title span,
+section.tariffs .title {
+    font-size: 2.5rem;
+}
+section.for .title > div:last-of-type img {
+    height: 4rem;
+    width: auto;
+}
+section.lessons .title > div img {
+    height: 3rem;
+    width: auto;
+}
+section.for .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 1.5rem;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "a a b b c c c"
+    "a a b b c c c"
+    "d d d e e f f"
+    "d d d e e f f";
+    margin-top: 1rem;
+}
+.a { grid-area: a; }
+.b { grid-area: b; }
+.c { grid-area: c; }
+.d { grid-area: d; }
+.e { grid-area: e; }
+.f { grid-area: f; }
+section.for .content > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 52px;
+    border: 1px solid rgba(255, 249, 249, 0.40);
+    background-image: linear-gradient(147deg, rgba(147, 31, 31, 0.56) 7.06%, rgba(255, 107, 72, 0.56) 93.42%);
+}
+section.for .content > div .title {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    line-height: 125%;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+section.for .content > div .title img {
+    width: 3rem;
+    height: auto;
+}
+section.for .content > div .text {
+    font-size: .9rem;
+    line-height: 125%;
+}
+section.for .content > div .after {
+    font-size: .8rem;
+    opacity: .7;
+    line-height: 125%;
+}
+section.for .content > div.c {
+    background-image: url("../intensive1/images/icon-5.png"), linear-gradient(147deg, rgba(147, 31, 31, 0.56) 7.06%, rgba(255, 107, 72, 0.56) 93.42%);
+    background-repeat: no-repeat;
+    background-size: 7rem auto, 100% 100%;
+    background-position: 97% 100%;
+}
+section.for .content > div.d {
+    background-image: url("../intensive1/images/icon-6.png"), linear-gradient(147deg, rgba(147, 31, 31, 0.56) 7.06%, rgba(255, 107, 72, 0.56) 93.42%);
+    background-repeat: no-repeat;
+    background-size: 7rem auto, 100% 100%;
+    background-position: bottom left;
+}
+br.mobile {
+    display: none;
+}
+section.author {
+    padding: 2rem 4rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+section.author .content {
+    display: flex;
+    gap: 3rem;
+}
+section.author .content > div {
+    flex: 1;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 48px;
+    background-color: #004739;
+    position: relative;
+    aspect-ratio: 22 / 25;
+}
+section.author .content > div:first-of-type {
+    background-image: url("../intensive1/images/bg-1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+section.author .content > div:last-of-type {
+    background-image: url("../intensive1/images/bg-2.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center center;
+}
+section.author .content > div .name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    line-height: 140%;
+}
+section.author .content > div ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 1rem;
+}
+section.author .content > div ul li {
+    font-size: .8rem;
+}
+section.author .content > div .abs {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: auto;
+    width: 70%;
+    border-bottom-right-radius: 48px;
+    pointer-events: none;
+}
+section.author .title {
+    text-align: center;
+}
+section.lessons {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+section.lessons  > .after {
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: 58.294px;
+    background: #00271F;
+    width: fit-content;
+}
+section.lessons > .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section.lessons > .content > div {
+    display: flex;
+    gap: 1.5rem;
+}
+section.lessons .lesson .left {
+    flex: 1;
+    border-radius: 52px;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.lessons .lesson .left .num {
+    color: #34AD6A;
+    font-size: 1.2rem;
+}
+section.lessons .lesson .left .text {
+
+    font-size: 1.25rem;
+}
+section.lessons .lesson .right {
+    flex: 3.25;
+    border-radius: 52px;
+    background: #6C53E7;
+    box-shadow: 0 0 100.1px 0 rgba(255, 255, 255, 0.58) inset;
+    padding: 3.5rem 4rem;
+}
+section.lessons .lesson .right ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+section.lessons .lesson .right ul li {
+    font-size: 1.2rem;
+}
+section.lessons .lesson:first-child .left {
+    background-image: url("../intensive1/images/lesson-bg-1.png");
+    background-repeat: no-repeat;
+    background-size: 60% auto;
+    background-position: bottom right;
+}
+section.lessons .lesson:nth-child(2) .left {
+    background-image: url("../intensive1/images/lesson-bg-2.png"), url("../intensive1/images/lesson-bg-4.png");
+    background-repeat: no-repeat;
+    background-size: 3rem auto, 10rem auto;
+    background-position: -1rem 50%, bottom right;
+}
+section.lessons .lesson:last-child .left {
+    background-image: url("../intensive1/images/lesson-bg-3.png");
+    background-repeat: no-repeat;
+    background-size: 10rem auto;
+    background-position: 40% calc(100% + 2.5rem);
+}
+section.tariffs {
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+section.tariffs .content {
+    display: flex;
+    gap: 2rem;
+}
+section.tariffs .content .left {
+    flex: 1.2;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 52px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section.tariffs .content .right {
+    flex: 3;
+    background: #FC6121;
+    border-radius: 52px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+section.tariffs .content .left .name {
+    font-size: 2.25rem;
+}
+section.tariffs .content .left .tooltip {
+    font-size: 1.5rem;
+}
+section.tariffs .content .list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+section.tariffs .content .list > div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+section.tariffs .content .list > div img {
+    width: .9rem;
+    height: auto;
+    min-width: .9rem;
+}
+section.tariffs .content .left .list > div:not(:first-child) img {
+    opacity: .25;
+}
+section.tariffs .content .list > div p {
+    opacity: .7;
+    line-height: 120%;
+}
+section.tariffs .content .left .list > div:not(:first-child) p {
+    text-decoration: line-through;
+}
+section.tariffs .content .right .name {
+    font-size: 2.75rem;
+}
+section.tariffs .content .right {
+    justify-content: space-between;
+    position: relative;
+    z-index: 15;
+}
+section.tariffs .content .inner {
+    padding: 1.5rem;
+    border-radius: 42px;
+    background: #025444;
+    box-shadow: 0 0 20px 0 rgba(255, 255, 255, 0.58) inset;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    z-index: 10;
+}
+section.tariffs .content .abs {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-10%, -22%);
+    width: 22rem;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+}
+section.tariffs .content .inner .price {
+    display: flex;
+    justify-content: space-between;
+}
+section.tariffs .content .inner .price p:first-child {
+    font-size: 1.25rem;
+}
+section.tariffs .content .inner .price p:last-child {
+    font-size: 1.75rem;
+}
+section.tariffs > .after {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border-radius: 52px;
+    background-color: #004739;
+    background-image: url("../intensive1/images/after-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+section.tariffs > .after > p {
+    font-size: 2rem;
+}
+section.tariffs .content a {
+    background-image:
+            radial-gradient(
+                    circle at 15% 50%,
+                    #ff5a1f 0%,
+                    rgba(255, 90, 31, 0.85) 20%,
+                    rgba(255, 122, 41, 0.45) 40%,
+                    rgba(255, 160, 60, 0.15) 60%,
+                    rgba(255, 186, 100, 0) 75%
+            ),
+            linear-gradient(
+                    90deg,
+                    #ff6a1f 0%,
+                    #fd8a24 40%,
+                    rgba(255, 163, 37, 0.87) 70%,
+                    rgb(251, 185, 57) 100%
+            );
+    color: #fff;
+}
+
+@media screen and (min-width: 2560px) and (max-width: 3840px) {
+    html {
+        font-size: 24px;
+    }
+    section.hero,
+    section.for,
+    section.author,
+    section.lessons,
+    section.tariffs {
+        padding: 3rem 15% 3rem 15%;
+    }
+}
+@media only screen and (min-width: 1921px) and (max-width: 2559px) {
+    html {
+        font-size: 22px;
+    }
+    section.hero,section.for, section.author, section.lessons, section.tariffs {
+        padding: 3rem 10% 5rem 10%;
+    }
+}
+@media only screen and (min-width: 1441px) and (max-width: 1600px) {
+    section.lessons .lesson .right {
+        padding: 3rem 3.5rem;
+    }
+    section.lessons .lesson .right ul li {
+        font-size: 1.1rem;
+    }
+    section.tariffs .content .left {
+        padding: 1.5rem;
+    }
+}
+@media only screen and (min-width: 1240px) and (max-width: 1600px) {
+    section.author .content > div .abs {
+        width: 65%;
+    }
+    section.hero .left .bottom > .left {
+        padding-right: 0;
+    }
+    section.hero a.offer-link {
+        margin-top: 0;
+    }
+}
+@media only screen and (min-width: 1240px) and (max-width: 1440px) {
+    html {
+        font-size: 18px;
+    }
+    section.hero,section.for,section.author, section.lessons, section.tariffs {
+        padding: 2rem 3rem;
+    }
+    section.for .content > div {
+        padding: 1.25rem;
+        gap: .75rem;
+        border-radius: 36px;
+    }
+    section.for .content > div br {
+        display: none;
+    }
+    section.for .content {
+        gap: 1.25rem;
+    }
+    section.author .content > div {
+        padding: 2.5rem 2rem;
+    }
+    section.author .content {
+        gap: 2rem;
+    }
+    section.lessons .lesson .right {
+        padding: 3rem 3.5rem;
+    }
+    section.lessons .lesson .right ul li {
+        font-size: 1.1rem;
+    }
+    section.lessons .lesson .right ul li br {
+        display: none;
+    }
+    section.lessons .lesson .left .text {
+        font-size: 1.1rem;
+    }
+    section.lessons .lesson .left,
+    section.lessons .lesson .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 36px;
+    }
+    section.tariffs .content .left,
+    section.tariffs .content .right {
+        padding: 1.5rem;
+    }
+    section.tariffs .content .list > div p {
+        font-size: .9rem;
+    }
+    section.tariffs > .after > p {
+        font-size: 1.9rem;
+    }
+    section.for .content > div {
+        padding: 1rem;
+    }
+    section.for .content > div .title img {
+        width: 2.5rem;
+    }
+    section.for .content > div .title  {
+        font-size: 1rem;
+    }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1239px) {
+    html {
+        font-size: 14px;
+    }
+    section.hero,section.for, section.author, section.lessons, section.tariffs {
+        padding: 2rem;
+    }
+    section.for .content > div {
+        padding: 1.25rem;
+        gap: .75rem;
+        border-radius: 36px;
+    }
+    section.for .content,
+    section.author .content {
+        gap: 1rem;
+    }
+    section.author .content > div {
+        padding: 2rem 1.5rem;
+    }
+    section.lessons .lesson .left .text br {
+        display: none;
+    }
+    section.lessons .lesson .left,
+    section.lessons .lesson .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 36px;
+    }
+    section.tariffs .content {
+        gap: 1.5rem;
+    }
+    section.hero .text-bottom {
+        font-size: 4.5rem;
+    }
+    section.hero header > img {
+        height: 30px;
+    }
+}
+@media only screen and (min-width: 830px) and (max-width: 1023px) {
+    html {
+        font-size: 14px;
+    }
+    section.hero,section.for,section.author, section.lessons, section.tariffs {
+        padding: 2rem 1rem;
+    }
+    section.hero .content {
+        gap: 0;
+    }
+    section.hero .text-bottom {
+        font-size: 3.5rem;
+    }
+    section.for .content {
+        gap: .5rem;
+    }
+    section.for .content > div br {
+        display: none;
+    }
+    section.for .content > div {
+        padding: 1.25rem;
+        gap: .5rem;
+        border-radius: 24px;
+    }
+    section.for .content > div .title {
+        font-size: 1.25rem;
+    }
+    section.author .content,
+    section.tariffs .content {
+        gap: 1rem;
+    }
+    section.author .content > div {
+        padding: 1.5rem;
+        border-radius: 24px;
+    }
+    section.author .content > div .abs {
+        border-radius: 24px;
+    }
+    section.author .content > div ul {
+        gap: 5px;
+    }
+    section.lessons .lesson .right {
+        padding: 2.5rem;
+    }
+    section.lessons .lesson .left,
+    section.lessons .lesson .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 24px;
+    }
+    section.lessons .lesson .right ul li br,
+    section.lessons .lesson .left .text br,
+    section.tariffs > .after > p br,
+    section.tariffs .content .list > div p br {
+        display: none;
+    }
+    section.lessons > .content,
+    section.lessons > .content > div {
+        gap: 1rem;
+    }
+    section.tariffs .content .left,
+    section.tariffs .content .right {
+        padding: 1.25rem;
+    }
+    section.tariffs .content .list > div p {
+        font-size: .9rem;
+    }
+    section.lessons {
+        padding-top: 4rem;
+    }
+    section.hero header {
+        margin-bottom: 2rem;
+    }
+    section.hero a.offer-link {
+        margin-top: 0;
+    }
+    section.hero .left .bottom > .left {
+        padding-right: 0;
+    }
+    section.hero .left > .bottom .left div:not(:last-child) {
+        padding: .75rem 1.5rem;
+    }
+    section.hero .left .bottom > .left .gift p {
+        font-size: .9rem;
+    }
+    section.hero img.abs {
+        bottom: 1.5rem;
+        left: -1.5rem;
+        height: 3rem;
+        width: 3rem;
+    }
+    section.hero .text-top {
+        font-size: 2rem;
+    }
+    section.for .content > div {
+        padding: 1rem;
+    }
+    section.for .content > div .title {
+        font-size: 1rem;
+    }
+    section.for .content > div .title img {
+        width: 2rem;
+    }
+    section.hero header > img {
+        height: 25px;
+    }
+}
+@media only screen and (max-width: 829px) {
+    html {
+        font-size: 16px;
+    }
+    section.hero,section.for,section.author,section.lessons, section.tariffs {
+        padding: 1.5rem 1rem;
+    }
+    section.hero .content .right {
+        display: none;
+    }
+    section.hero header > img {
+        height: 20px;
+    }
+    section.hero .text-bottom {
+        font-size: 3.5rem;
+    }
+    section.hero .content .left {
+        gap: 1.5rem;
+    }
+    section.hero .left .bottom {
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    section.hero .left .bottom div.mobile {
+        display: block;
+        width: 50%;
+        height: auto;
+        position: relative;
+        z-index: 100;
+    }
+    section.hero .left .bottom div.mobile img:not(.abs) {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 100;
+    }
+    section.hero .left .bottom .left {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        height: fit-content;
+        padding: 0;
+        border-radius: 36px;
+        max-width: 60%;
+    }
+    section.hero .left .bottom img:not(.abs) {
+        height: 1.35rem;
+    }
+    section.hero .list > div p {
+        font-size: .85rem;
+    }
+    section.hero .text-top {
+        font-size: 2.25rem;
+    }
+    section.for .content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+        "a"
+        "b"
+        "c"
+        "d"
+        "e"
+        "f";
+        justify-items: center;
+    }
+    section.for .content > div {
+        width: 80%;
+        padding: 1.5rem 4rem 1.5rem 1.5rem;
+        border-radius: 32px;
+    }
+    section.for > .title {
+        width: fit-content;
+        margin: auto;
+    }
+    br.mobile {
+        display: block;
+    }
+    section.for .content > div .text {
+        font-size: 1.1rem;
+    }
+    section.for .content > div .after {
+        font-size: 1rem;
+    }
+    section.for .content > div .title {
+        line-height: 145%;
+    }
+    section.author .title {
+        font-size: 3.5rem;
+    }
+    section.author .content {
+        flex-direction: column;
+    }
+    section.author .content > div .name {
+        font-size: 2.2rem;
+    }
+    section.author .content > div ul li {
+        font-size: 1.2rem;
+    }
+    section.author .content > div {
+        border-radius: 28px;
+        padding: 1.5rem;
+    }
+    section.author .content > div .abs {
+        width: 60%;
+        border-radius: 28px;
+    }
+    section.lessons > .content {
+        gap: 3rem;
+    }
+    section.lessons > .content > div {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    section.lessons > .content > div .left,
+    section.lessons > .content > div .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 36px;
+    }
+    section.lessons > .content > div br:not(.mobile),
+    section.tariffs .content br,
+    section.hero .bottom .left br:not(.mobile),
+    section.for .content > div br:not(.mobile) {
+        display: none;
+    }
+    section.lessons > .content > div .left {
+        padding: 2.5rem;
+    }
+    section.lessons .lesson .right ul li {
+        line-height: 125%;
+    }
+    section.lessons .lesson .left .text,
+    section.lessons .lesson .left .num {
+        font-size: 1.35rem;
+    }
+    section.lessons .lesson:first-child .left {
+        background-size: 15rem auto;
+        background-position: calc(100% + 5rem) calc(100% + 6rem);
+    }
+    section.lessons .lesson:nth-child(2) .left {
+        background-size: 5rem auto, 10rem auto;
+        background-position: 10% calc(100% + 3rem), 100% calc(100% + 3rem);
+    }
+    section.lessons .lesson:last-child .left {
+        background-image: url("../intensive1/images/lesson-bg-3.png");
+        background-repeat: no-repeat;
+        background-size: 10rem auto;
+        background-position: calc(100% + 1.5rem) -1rem;
+    }
+    section.tariffs .content {
+        flex-direction: column;
+    }
+    section.tariffs .content a {
+        font-size: 1.5rem;
+    }
+    section.hero .left .bottom .text img:not(.abs) {
+        height: 3.2rem;
+    }
+    section.hero .left .bottom {
+        gap: 1.5rem;
+    }
+    section.hero .left .bottom > .left .text {
+        width: fit-content;
+        gap: 1rem;
+        border-radius: 36px;
+        flex-direction: column;
+    }
+    section.hero .left .bottom > .left .gift {
+        flex-direction: column;
+    }
+    section.hero .left .bottom > .left .gift img:last-of-type {
+        margin-top: 0;
+        margin-bottom: -2rem;
+        width: 12rem;
+    }
+    section.hero header > img {
+        height: 25px;
+    }
+    section.hero .left .bottom div.mobile img:not(.abs) {
+        margin-top: -1rem;
+    }
+    section.hero img.abs,
+    section.hero .left .bottom .gift img:first-of-type {
+        display: none;
+    }
+    section.hero a.offer-link {
+        padding: 2rem 4rem;
+        font-size: 1.5rem;
+        margin-top: -1rem;
+    }
+    section.tariffs .content {
+        gap: 5rem;
+    }
+    section.tariffs .content .abs {
+        width: 17rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+    section.hero .text-bottom {
+        font-size: 3rem;
+    }
+    section.hero .text-top {
+         font-size: 2rem;
+        padding: 1rem 1.5rem;
+    }
+    section.hero .list {
+        gap: .5rem;
+    }
+    section.hero .list > div {
+        padding: .5rem;
+    }
+    section.for .content > div {
+        width: 100%;
+        border-radius: 24px;
+    }
+    section.author .content > div .abs {
+        width: 50%;
+    }
+    section.author .content > div .name br:not(.mobile) {
+        display: none;
+    }
+    section.author .content > div {
+        aspect-ratio: 22 / 21;
+    }
+    section.tariffs > .after > p br {
+        display: none;
+    }
+    section.tariffs > .after > p {
+        font-size: 1.75rem;
+    }
+    section.hero .left .bottom .left {
+        border-radius: 30px;
+    }
+    section.hero a.offer-link,
+    section.for a.offer-link,
+    section.author a.offer-link {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 1.5rem 2rem;
+        font-size: 2rem;
+    }
+    section.hero .list > div {
+        padding: 1rem;
+    }
+    section.hero .list > div p {
+        font-size: 1.3rem;
+    }
+    section.hero .left .bottom > .left .gift img:last-of-type {
+        width: 10rem;
+    }
+    section.tariffs .content .abs {
+        position: relative;
+        transform: initial;
+        margin: -1rem auto -12rem auto;
+        display: block;
+    }
+    section.hero .left .bottom > .left .text {
+        border-radius: 24px;
+    }
+    section.hero a.offer-link {
+        margin-top: -1.5rem;
+    }
+}
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 13px;
+    }
+    section.hero, section.for,section.author, section.lessons, section.tariffs {
+        padding: 2rem 10px 4rem 10px;
+    }
+    section.hero header > img {
+        height: 20px;
+    }
+    section.author .content > div {
+        overflow: hidden;
+    }
+    section.author .content > div .abs {
+        width: 75%;
+        bottom: -20%;
+        right: -3%;
+    }
+    section.author .content > div br:not(.mobile) {
+        display: none;
+    }
+    section.author .content > div ul {
+        gap: 7px;
+    }
+    section.lessons .lesson .right {
+        padding: 1.5rem 1.5rem 1.5rem 2.5rem;
+    }
+    section.lessons > .content > div .left, section.lessons > .content > div .right,
+    section.tariffs .content .left,
+    section.tariffs .content .right,
+    section.tariffs .content .inner,
+    section.tariffs > .after {
+        border-radius: 26px;
+    }
+    section.tariffs .content .right,
+    section.tariffs .content .left {
+        padding: 1.5rem;
+    }
+    section.lessons .lesson .left .text, section.lessons .lesson .left .num {
+        font-size: 1.5rem;
+    }
+    section.hero .left .bottom .left {
+        border-radius: 26px;
+    }
+    section.hero .left .bottom > .left .text p {
+        font-size: 1.25rem;
+    }
+    section.hero .list > div p {
+        font-size: 1.3rem;
+    }
+    section.hero a.offer-link {
+        margin-top: 0;
+    }
+    section.for .content > div .after {
+        font-size: 1.1rem;
+    }
+    section.for .content > div .text {
+        font-size: 1.2rem;
+    }
+    section.for .content > div .title {
+        font-size: 1.5rem;
+    }
+    section.tariffs .content .list > div p {
+        font-size: 1.25rem;
+    }
+    section.tariffs .content .list {
+        gap: 10px;
+    }
+    section.tariffs .content a {
+        font-size: 2rem;
+    }
+    section.tariffs .content a img {
+        width: 1.5rem;
+        height: auto;
+    }
+    section.tariffs .content .inner .price p:first-child {
+        font-size: 1.5rem;
+    }
+    section.hero a.offer-link {
+        margin-top: -3rem;
+    }
+
+}
+@media only screen and (max-width: 420px) {
+    html {
+        font-size: 13px;
+    }
+    section.hero, section.for,section.author, section.lessons, section.tariffs {
+        padding: 2rem 5px 4rem 5px;
+    }
+    section.hero .left .bottom .text img:not(.abs) {
+        height: 2.2rem;
+    }
+    section.hero .left .bottom > .left .text {
+        padding: .75rem;
+    }
+    section.hero .text-bottom {
+        font-size: 2.9rem;
+    }
+}
+@media only screen and (max-width: 380px) {
+    html {
+        font-size: 11.5px;
+    }
+    section.author .content > div ul {
+        gap: 5px;
+    }
+    section.hero a.offer-link {
+        margin-top: -1.5rem;
+    }
+}
+@media only screen and (max-width: 366px) {
+    html {
+        font-size: 10.5px;
+    }
+}
